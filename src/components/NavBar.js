@@ -32,10 +32,12 @@ const useStyles = makeStyles((theme) => ({
     width: 250,
     background: "#511",
     height: "100%",
+    paddingTop:"5rem"
   },
   avatar: {
     display: "block",
-    margin: "0.5rem auto",
+    margin: "2rem auto",
+    // paddingTop: '2rem',
     width: theme.spacing(13),
     height: theme.spacing(13),
   },
