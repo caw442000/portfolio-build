@@ -8,8 +8,8 @@ import Typed from "react-typed";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: theme.spacing(30),
-    height: theme.spacing(30),
+    width: theme.spacing(40),
+    height: theme.spacing(40),
     margin: theme.spacing(1),
     // opacity: 0.75,
   },
@@ -18,14 +18,16 @@ const useStyles = makeStyles((theme) => ({
   },
   subtitle: {
     color: "tan",
-    marginBottom: "3rem",
+    marginTop: "2rem",
+    marginBottom: "2rem",
   },
   typedContainer: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    // position: "absolute",
+    // top: "50%",
+    // left: "50%",
+    // transform: "translate(-50%, -50%)",
     width: "100vw",
+    paddingTop: "5rem",
     textAlign: "center",
     margin: "0 auto",
     zIndex: 1,
@@ -43,15 +45,18 @@ const Header = () => {
         <Typed strings={["Cedric Winbush Jr"]} typeSpeed={40} />
       </Typography>
 
-      <br />
       <Typography className={classes.subtitle} variant="h5">
         <Typed
-          strings={["Web Design", "Web Development", "PERN Stack"]}
+          strings={["Web Design", "Web Development", "MERN Stack", "PERN Stack"]}
           typeSpeed={40}
           backSpeed={60}
           loop
         />
       </Typography>
+      <Typography className={classes.subtitle}variant="h6">
+      HTML/CSS | Material-UI | JavaScript | React | Redux | ContextApi | NodeJS | Express | MongoDB | Postgres
+      </Typography>
+      
     </Box>
   );
 };
