@@ -66,9 +66,9 @@ const menuItems = [
 ];
 
 const NavBar = () => {
-  const [state, setState] = useState({
-    right: false
-  })
+  // const [state, setState] = useState({
+  //   right: false
+  // })
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
 
