@@ -8,8 +8,8 @@ import Typed from "react-typed";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
+    width: theme.spacing(30),
+    height: theme.spacing(30),
     margin: theme.spacing(1),
   },
   title: {
