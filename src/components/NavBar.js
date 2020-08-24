@@ -23,8 +23,7 @@ import {
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import cedric from "../assets/images/cedric.png";
-
+import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 //CSS Styles
 
 const useStyles = makeStyles((theme) => ({

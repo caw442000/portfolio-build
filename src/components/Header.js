@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Avatar, Grid, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import cedric from "../assets/images/cedric.png";
+import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 import Typed from "react-typed";
 
 // CSS Styles
@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(30),
     height: theme.spacing(30),
     margin: theme.spacing(1),
+    // opacity: 0.75,
   },
   title: {
     color: "tomato",
