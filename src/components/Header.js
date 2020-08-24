@@ -54,7 +54,7 @@ const Header = () => {
         />
       </Typography>
       <Typography className={classes.subtitle}variant="h6">
-      HTML/CSS | Material-UI | JavaScript | React | Redux | ContextApi | NodeJS | Express | MongoDB | Postgres
+      HTML/CSS | SASS | LESS | Material-UI | JavaScript | React | Redux | ContextApi | NodeJS | Express | Postgres| MongoDB 
       </Typography>
       
     </Box>
