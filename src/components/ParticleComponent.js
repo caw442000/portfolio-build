@@ -20,8 +20,11 @@ const ParticleComponent = () => {
         canvasClassName= {classes.particlesCanvas}
         params={{
           particles: {
+            move: {
+              speed: 2,
+            },
             number: {
-              value: 70,
+              value: 45,
               density: {
                 enable: true, 
                 value_area: 900,
@@ -39,13 +42,14 @@ const ParticleComponent = () => {
               random: true,
               anim: {
                 enable: true, 
-                speed: 5, 
+                speed: 3, 
                 size_min: 0.1,
                 sync: true
               }
             },
+          
             opacity: {
-              value: 0.8, 
+              value: 1, 
               random: true,
               anim: {
                 enable: true, 
