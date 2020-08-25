@@ -8,8 +8,8 @@ import Typed from "react-typed";
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
-    width: theme.spacing(40),
-    height: theme.spacing(40),
+    width: theme.spacing(20),
+    height: theme.spacing(20),
     margin: theme.spacing(1),
     // opacity: 0.75,
   },
@@ -22,11 +22,11 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2rem",
   },
   typedContainer: {
-    // position: "absolute",
-    // top: "50%",
-    // left: "50%",
-    // transform: "translate(-50%, -50%)",
-    width: "100vw",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "100%",
     paddingTop: "5rem",
     textAlign: "center",
     margin: "0 auto",

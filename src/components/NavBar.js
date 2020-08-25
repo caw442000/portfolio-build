@@ -31,14 +31,14 @@ const useStyles = makeStyles((theme) => ({
     width: 250,
     background: "#511",
     height: "100%",
-    paddingTop:"5rem"
+    // paddingTop:"2rem"
   },
   avatar: {
     display: "block",
     margin: "2rem auto",
-    // paddingTop: '2rem',
-    width: theme.spacing(13),
-    height: theme.spacing(13),
+    // paddingBottom: '2rem',
+    width: theme.spacing(20),
+    height: theme.spacing(20),
   },
   listItem: {
     color: "tan",
@@ -65,19 +65,19 @@ const menuItems = [
 ];
 
 const NavBar = () => {
-  // const [state, setState] = useState({
-  //   right: false
-  // })
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [state, setState] = useState({
+    right: false
+  })
+  const [mobileOpen, setMobileOpen] = useState(false);
 
 
-  // const toggleSlider = (slider, open ) => () => {
-  //   setState({...state, [slider]: open});
+  const toggleSlider = (slider, open ) => () => {
+    setState({...state, [slider]: open});
 
-  // };
+  };
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    setMobileOpen(() => !mobileOpen);
   };
   const classes = useStyles();
   const sideList = () => (
@@ -100,14 +100,18 @@ const NavBar = () => {
   return (
     <>
       <Box component="nav">
-        <AppBar position="static" style={{ background: "#222" }}>
+        <AppBar position="absolute" style={{ background: "#222" }}>
           <Toolbar>
+            {/* <IconButton onClick={toggleSlider("right", true)}> */}
             <IconButton onClick={handleDrawerToggle}>
               <ArrowBack style={{ color: "tomato" }} />
             </IconButton>
             <Typography variant="h5" style={{ color: "tan" }}>
               Portfolio
             </Typography>
+            {/* <MobileRightMenuSlider anchor="right" open= {state.right} onClose = {toggleSlider("right", false)} >
+                {sideList("right")}
+            </MobileRightMenuSlider> */}
             <MobileRightMenuSlider anchor="right" open= {mobileOpen} onClose = {handleDrawerToggle} >
                 {sideList()}
             </MobileRightMenuSlider>
