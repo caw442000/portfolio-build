@@ -99,9 +99,9 @@ const NavBar = () => {
 
   return (
     <>
-      <Box component="nav">
-        <AppBar position="absolute" style={{ background: "#222" }}>
-          <Toolbar>
+      <Box component="nav" >
+        <AppBar position="sticky" style={{ background: "#222"}}>
+          <Toolbar style={{ background: "#222", minHeight: "64px", paddingLeft: "24px", paddingRight: "24px"}}>
             {/* <IconButton onClick={toggleSlider("right", true)}> */}
             <IconButton onClick={handleDrawerToggle}>
               <ArrowBack style={{ color: "tomato" }} />
