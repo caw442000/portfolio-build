@@ -1,23 +1,24 @@
 import React from "react";
-import { Typography, Avatar, Grid, Box } from "@material-ui/core";
+import {
+  Typography,
+  Avatar,
+  Grid,
+  Box,
+  Link,
+  IconButton,
+  Button
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 import Typed from "react-typed";
 // import { loadCSS } from 'fg-loadcss';
 // import classNames from "classnames";
-import LinkedInIcon  from '@material-ui/icons/LinkedIn';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
-
-
-import Icon from '@material-ui/core/Icon';
-
-
-
+import Icon from "@material-ui/core/Icon";
 
 // CSS Styles
-
-
 
 const useStyles = makeStyles((theme) => ({
   // root: {
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2rem",
   },
   hr: {
-    borderTop: "5px dotted white", 
+    borderTop: "5px dotted white",
     width: "50%",
     margin: "auto",
   },
@@ -55,8 +56,21 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
     zIndex: 1,
     maxWidth: "600px",
-    minWidth: "300px", 
+    minWidth: "300px",
     // height: "700px",
+  },
+  iconcontainer: {
+    display: "flex",
+    width: "100%",
+    justifyContent: "center",
+    // alignContent: "center",
+    // alignSelf: "center",
+    // alignItems: "center"
+  },
+  icons: {
+    color: "tan",
+    fontSize: "3rem",
+    margin: "0 1em",
   },
 }));
 
@@ -80,20 +94,24 @@ const Header = () => {
         <Avatar className={classes.avatar} src={cedric} alt="Cedric Winbush" />
       </Grid>
       <Typography className={classes.title} variant="h4">
-        <Typed strings={["Cedric Winbush Jr"]} typeSpeed={40} />
+      Cedric Winbush Jr
+        {/* <Typed strings={["Cedric Winbush Jr"]} typeSpeed={40} /> */}
       </Typography>
       <Typography className={classes.title} variant="h5">
-        <Typed strings={["Full Stack Web Developer"]} typeSpeed={40} />
+      Full Stack Web Developer
+        {/* <Typed strings={["Full Stack Web Developer"]} typeSpeed={40} /> */}
       </Typography>
 
-      
-        {/* <hr className= {classes.hr} /> */}
-
-        
+      {/* <hr className= {classes.hr} /> */}
 
       <Typography className={classes.subtitle} variant="h5">
         <Typed
-          strings={["Web Design", "Web Development", "MERN Stack", "PERN Stack"]}
+          strings={[
+            "Web Design",
+            "Web Development",
+            "MERN Stack",
+            "PERN Stack",
+          ]}
           typeSpeed={50}
           backSpeed={70}
           smartBackspace
@@ -103,15 +121,18 @@ const Header = () => {
 
         {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} /> */}
       </Typography>
-      <Typography>
-        <LinkedInIcon /><GitHubIcon/>
+      <Typography className={classes.iconcontainer} variant="div">
+        <Button component={Link} href="https://www.linkedin.com/in/cedricwinbush/" target="_blank">
+          <LinkedInIcon className={classes.icons} />
+        </Button>
+        <Button component={Link} href="https://github.com/caw442000" target="_blank">
+          <GitHubIcon className={classes.icons} />
+        </Button>
       </Typography>
-      <Typography className={classes.subtitle}variant="h6">
-      HTML/CSS | SASS | LESS | Material-UI | JavaScript | React | Redux | ContextApi | NodeJS | Express | Postgres| MongoDB 
+      <Typography className={classes.subtitle} variant="h6">
+        HTML/CSS | SASS | LESS | Material-UI | JavaScript | React | Redux |
+        ContextApi | NodeJS | Express | Postgres| MongoDB
       </Typography>
-
-      
-      
     </Box>
   );
 };
