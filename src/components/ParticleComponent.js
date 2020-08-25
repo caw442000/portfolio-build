@@ -21,7 +21,7 @@ const ParticleComponent = () => {
         params={{
           particles: {
             move: {
-              speed: 2,
+              speed: 5,
             },
             number: {
               value: 45,
