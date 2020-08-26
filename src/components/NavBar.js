@@ -101,7 +101,8 @@ const NavBar = () => {
     <>
       <Box component="nav" >
         <AppBar  
-        // elevation={0} this is what will make the nav flat
+        elevation={0} 
+        // this is what will make the nav flat
         position="sticky" style={{ background: "#222"}}>
           <Toolbar style={{ background: "#222", minHeight: "64px", paddingLeft: "24px", paddingRight: "24px" }}>
             {/* <IconButton onClick={toggleSlider("right", true)}> */}

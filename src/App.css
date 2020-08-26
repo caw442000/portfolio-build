@@ -5,5 +5,5 @@ body {
   background: url(./assets/images/coffee-apple.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
