@@ -71,22 +71,25 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
     fontSize: "3rem",
     margin: "0 1em",
+    transition: "transform 50ms ease-out",
+    "&:hover": {
+      background: 'transparent',
+      transform: "scale(1.2)",
+    }
   },
+  buttonstyle: {
+    background: 'transparent',
+    // transition: "transform 50ms ease-out",
+    "&:hover": {
+      background: 'transparent',
+      // transform: "scale(1.2)",
+    }
+  }
 }));
 
 const Header = () => {
   const classes = useStyles();
 
-  // React.useEffect(() => {
-  //   const node = loadCSS(
-  //     'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
-  //     document.querySelector('#font-awesome-css'),
-  //   );
-
-  //   return () => {
-  //     node.parentNode.removeChild(node);
-  //   };
-  // }, []);
 
   return (
     <Box className={classes.typedContainer}>
@@ -122,10 +125,10 @@ const Header = () => {
         {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} /> */}
       </Typography>
       <Typography className={classes.iconcontainer} variant="div">
-        <Button component={Link} href="https://www.linkedin.com/in/cedricwinbush/" target="_blank">
+        <Button component={Link} href="https://www.linkedin.com/in/cedricwinbush/" target="_blank" className={classes.buttonstyle}>
           <LinkedInIcon className={classes.icons} />
         </Button>
-        <Button component={Link} href="https://github.com/caw442000" target="_blank">
+        <Button component={Link} href="https://github.com/caw442000" target="_blank" className={classes.buttonstyle}>
           <GitHubIcon className={classes.icons} />
         </Button>
       </Typography>
