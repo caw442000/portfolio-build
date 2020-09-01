@@ -6,6 +6,8 @@ import NavBar from "./NavBar";
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
+    overflowY: "scroll",
+
   },
   timeLine: {
     position: "relative",
@@ -108,8 +110,7 @@ const Resume = () => {
   const classes = useStyles();
   return (
     <>
-      <NavBar />
-      <Box component="header" className={classes.mainContainer}>
+      <Box component="header" className={`${classes.mainContainer} `}>
         <Typography variant="h4" align="center" className={classes.heading}>
           working experience
         </Typography>
@@ -150,6 +151,37 @@ const Resume = () => {
             className={`${classes.timeLineYear} ${classes.timeLineItem}`}
           >
             2019
+          </Typography>
+          <Box component="div" className={classes.timeLineItem}>
+            <Typography
+              variant="h5"
+              aligh="center"
+              className={classes.subHeading}
+            >
+              web development
+            </Typography>
+            <Typography
+              variant="body1"
+              aligh="center"
+              style={{ color: "tomato" }}
+            >
+              company name and where worked
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              aligh="center"
+              style={{ color: "tan" }}
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id libero
+              dignissimos quo iure similique aspernatur, veritatis eligendi odit
+              delectus impedit.
+            </Typography>
+          </Box>
+          <Typography
+            variant="h2"
+            className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+          >
+            2020
           </Typography>
           <Box component="div" className={classes.timeLineItem}>
             <Typography

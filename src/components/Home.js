@@ -24,7 +24,7 @@ const Home = () => {
           height: "100%",
         }}
       >
-        <NavBar />
+        {/* <NavBar /> */}
         <Header />
       </div>
     </div>

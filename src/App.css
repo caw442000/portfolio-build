@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
-
+html {
+  /* overflow: scroll; */
+  overflow: visible;
+}
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
 body {
   font-family: 'Roboto', sans-serif;
   background: url(./assets/images/coffee-apple.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
-  /* overflow: hidden; */
+  /* overflow-y: scroll; */
+  
 }
+
+

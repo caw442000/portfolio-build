@@ -109,7 +109,7 @@ const NavBar = () => {
         elevation={0} 
         // this is what will make the nav flat
         position="sticky" style={{ background: "#222"}}>
-          <Toolbar style={{ background: "#222", minHeight: "64px", paddingLeft: "24px", paddingRight: "24px" }}>
+          <Toolbar style={{ background: "#222", minHeight: "64px", paddingLeft: "24px", paddingRight: "24px"}}>
             {/* <IconButton onClick={toggleSlider("right", true)}> */}
             <IconButton onClick={handleDrawerToggle}>
               <ArrowBack style={{ color: "tomato" }} />
