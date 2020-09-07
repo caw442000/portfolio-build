@@ -12,18 +12,18 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <NavBar />
-      <Switch>
-        <Route path="/resume">
-          <Resume />
-        </Route>
-        <Route path="/portfolio">
+      <div className="app">
+        <NavBar />
+      
+
+        <Route exact path="/resume" component={Resume} />
+        <Route exact path="/portfolio">
           <Portfolio />
         </Route>
         <Route exact path="/">
           <Home />
         </Route>
-      </Switch>
+        </div>
     </>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MobileRightMenuSlider from "@material-ui/core/Drawer"
 import { Link } from 'react-router-dom'
 import {
+  Container,
   AppBar,
   Toolbar,
   ListItem,
@@ -25,6 +26,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
+import Resume from "./Resume";
 //CSS Styles
 
 const useStyles = makeStyles((theme) => ({
@@ -103,12 +105,11 @@ const NavBar = () => {
   );
 
   return (
-    <>
-      <Box component="nav" >
+      <Box component="nav" style={{}} >
         <AppBar  
         elevation={0} 
         // this is what will make the nav flat
-        position="sticky" style={{ background: "#222"}}>
+          style={{ top: '0', background: "#222"}}>
           <Toolbar style={{ background: "#222", minHeight: "64px", paddingLeft: "24px", paddingRight: "24px"}}>
             {/* <IconButton onClick={toggleSlider("right", true)}> */}
             <IconButton onClick={handleDrawerToggle}>
@@ -125,8 +126,9 @@ const NavBar = () => {
             </MobileRightMenuSlider>
           </Toolbar>
         </AppBar>
+    
+        
       </Box>
-    </>
   );
 };
 

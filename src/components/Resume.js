@@ -7,6 +7,10 @@ const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
     overflowY: "scroll",
+    display: "flex",
+    flexDirection: 'column',
+    // flex: '1',
+    // paddingTop: '50px'
 
   },
   timeLine: {
@@ -110,6 +114,7 @@ const Resume = () => {
   const classes = useStyles();
   return (
     <>
+      <NavBar />
       <Box component="header" className={`${classes.mainContainer} `}>
         <Typography variant="h4" align="center" className={classes.heading}>
           working experience

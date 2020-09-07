@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     maxWidth: "600px",
     minWidth: "300px",
+    overflow: 'hidden'
     // height: "700px",
   },
   iconcontainer: {
