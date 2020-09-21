@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
     overflowY: "scroll",
     display: "flex",
     flexDirection: 'column',
-    // flex: '1',
+    flex: '1',
+    width: "100%"
     // paddingTop: '50px'
 
   },
@@ -113,8 +114,7 @@ const useStyles = makeStyles((theme) => ({
 const Resume = () => {
   const classes = useStyles();
   return (
-    <>
-      <NavBar />
+    <div className="resume__body">
       <Box component="header" className={`${classes.mainContainer} `}>
         <Typography variant="h4" align="center" className={classes.heading}>
           working experience
@@ -246,7 +246,7 @@ const Resume = () => {
           </Box>
         </Box>
       </Box>
-    </>
+    </div>
   );
 };
 

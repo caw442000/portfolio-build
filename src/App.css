@@ -23,11 +23,22 @@ body {
 }
 
 
-/* .main__app {
+.main__app {
   display: flex;
-  flex: 1,
+  /* flex: 1, */
   
 
-} */
+}
+
+.main__app__body {
+  padding-top: 40px;
+  width: 100%;
+  margin: 0 auto;
+  
+
+}
+.resume__body {
+  width: 100%;
+}
 
 

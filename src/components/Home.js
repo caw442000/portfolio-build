@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
-import Header from "./Header";
+import HomeBody from "./HomeBody";
 import ParticleComponent from "./ParticleComponent";
 
 
@@ -22,7 +22,7 @@ const Home = () => {
         }}
       > */}
         {/* <NavBar /> */}
-        <Header />
+        <HomeBody />
       {/* </div> */}
     </div>
   );
