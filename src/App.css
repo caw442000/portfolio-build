@@ -16,4 +16,29 @@ body {
   
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+.main__app {
+  display: flex;
+  /* flex: 1, */
+  
+
+}
+
+.main__app__body {
+  padding-top: 40px;
+  width: 100%;
+  margin: 0 auto;
+  
+
+}
+.resume__body {
+  width: 100%;
+}
+
 

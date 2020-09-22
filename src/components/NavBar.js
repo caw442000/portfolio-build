@@ -1,7 +1,20 @@
-import React, { useState } from "react";
-import MobileRightMenuSlider from "@material-ui/core/Drawer"
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import Home from "./Home";
 import {
+  Route,
+  Switch,
+  useHistory,
+  useParams,
+  withRouter,
+  useLocation,
+} from "react-router-dom";
+import Resume from "./Resume";
+import Portfolio from "./Portfolio";
+
+import MobileRightMenuSlider from "@material-ui/core/Drawer";
+import { Link } from "react-router-dom";
+import {
+  Container,
   AppBar,
   Toolbar,
   ListItem,
@@ -13,121 +26,189 @@ import {
   List,
   Typography,
   Box,
+  Drawer,
+  Button,
+  MenuItem,
+  Menu,
 } from "@material-ui/core";
 import {
   ArrowBack,
   AssignmentInd,
-  Home,
+  Home as HomeIcon,
   Apps,
   ContactMail,
+  Menu as MenuIcon,
 } from "@material-ui/icons";
 
-import { makeStyles } from "@material-ui/core/styles";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
+
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { menuItems } from "./menuItems";
 
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
+import { render } from "@testing-library/react";
 //CSS Styles
 
+const drawerWidth = 240;
+
+// const useStyles = makeStyles((theme) => ({
+//   menuSliderContainer: {
+//     width: 250,
+//     background: "#511",
+//     height: "100%",
+//     // paddingTop:"2rem"
+//   },
+//   avatar: {
+//     display: "block",
+//     margin: "2rem auto",
+//     // paddingBottom: '2rem',
+//     width: theme.spacing(20),
+//     height: theme.spacing(20),
+//   },
+//   listItem: {
+//     color: "tan",
+//   },
+// }));
+
 const useStyles = makeStyles((theme) => ({
-  menuSliderContainer: {
-    width: 250,
-    background: "#511",
-    height: "100%",
-    // paddingTop:"2rem"
+  root: {
+    display: "flex",
+    flexGrow: 1,
+    justifyContent: "Space-Between",
   },
-  avatar: {
-    display: "block",
-    margin: "2rem auto",
-    // paddingBottom: '2rem',
-    width: theme.spacing(20),
-    height: theme.spacing(20),
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
   },
-  listItem: {
-    color: "tan",
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerContainer: {
+    overflow: "auto",
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
+  topHeader: {
+    display: "flex",
+    justifyContent: "space-between",
   },
 }));
 
-const menuItems = [
-  {
-    listIcon: <Home />,
-    listText: "Home",
-    listPath: '/'
-  },
-  {
-    listIcon: <AssignmentInd />,
-    listText: "Resume",
-    listPath: '/resume'
-  },
-  {
-    listIcon: <Apps />,
-    listText: "Portfolio",
-    listPath: "/portfolio"
-  },
-  {
-    listIcon: <ContactMail />,
-    listText: "Contacts",
-    listPath: "/contacts"
-  },
-];
-
 const NavBar = () => {
-  const [state, setState] = useState({
-    right: false
-  })
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const params = useParams();
+  let location = useLocation();
+  console.log("params", params);
+  const history = useHistory();
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
-  const toggleSlider = (slider, open ) => () => {
-    setState({...state, [slider]: open});
+  const [navTitle, setNavTitle] = useState("");
 
+  useEffect(() => {
+    let renderTitle = location.pathname;
+
+    if (renderTitle === "/") {
+      setNavTitle("HOME");
+    } else {
+      renderTitle = renderTitle.replace(/\//g, "");
+      setNavTitle(renderTitle.toUpperCase());
+    }
+  }, [location]);
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(() => !mobileOpen);
+  const handleMenuClick = (pageURL) => {
+    history.push(pageURL);
+    setAnchorEl(null);
   };
+
+  const handleButtonClick = (pageURL) => {
+    history.push(pageURL);
+  };
+
+  // const [state, setState] = useState({
+  //   right: false
+  // })
+  // const [mobileOpen, setMobileOpen] = useState(false);
+
+  // const toggleSlider = (slider, open ) => () => {
+  //   setState({...state, [slider]: open});
+
+  // };
+
+  // const handleDrawerToggle = () => {
+  //   setMobileOpen(() => !mobileOpen);
+  // };
   const classes = useStyles();
-  const sideList = () => (
-    <Box className={classes.menuSliderContainer} component="div">
-      <Avatar className={classes.avatar} src={cedric} alt="Cedric Winbush Jr" />
-      <Divider />
-      <List>
-        {menuItems.map((lsItem, key) => (
-          <ListItem key={key} button component={Link} to= {lsItem.listPath}>
-            <ListItemIcon className={classes.listItem}>
-              {lsItem.listIcon}
-            </ListItemIcon>
-            <ListItemText primary={lsItem.listText} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
 
   return (
-    <>
-      <Box component="nav" >
-        <AppBar  
-        elevation={0} 
-        // this is what will make the nav flat
-        position="sticky" style={{ background: "#222"}}>
-          <Toolbar style={{ background: "#222", minHeight: "64px", paddingLeft: "24px", paddingRight: "24px"}}>
-            {/* <IconButton onClick={toggleSlider("right", true)}> */}
-            <IconButton onClick={handleDrawerToggle}>
-              <ArrowBack style={{ color: "tomato" }} />
-            </IconButton>
-            <Typography variant="h5" style={{ color: "tan" }}>
-              Portfolio
-            </Typography>
-            {/* <MobileRightMenuSlider anchor="right" open= {state.right} onClose = {toggleSlider("right", false)} >
-                {sideList("right")}
-            </MobileRightMenuSlider> */}
-            <MobileRightMenuSlider anchor="right" open= {mobileOpen} onClose = {handleDrawerToggle} >
-                {sideList()}
-            </MobileRightMenuSlider>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </>
+    <div className={classes.root}>
+      <AppBar
+        elevation={0}
+        position="fixed"
+        className={classes.appBar}
+        style={{ top: "0", background: "#222" }}
+      >
+        <Toolbar className={classes.topHeader}>
+          <Typography variant="h6" noWrap>
+            {navTitle}
+          </Typography>
+          {isMobile && (
+            <>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+                onClick={handleMenu}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={open}
+                onClose={() => setAnchorEl(null)}
+              >
+                {menuItems.map((menuItem, key) => {
+                  const { listText, listPath } = menuItem;
+                  return (
+                    <MenuItem
+                      key={key}
+                      onClick={() => handleMenuClick(listPath)}
+                    >
+                      {listText}
+                    </MenuItem>
+                  );
+                })}
+              </Menu>
+            </>
+          )}
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);

@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
     marginTop: "2rem",
     marginBottom: "2rem",
+    textAlign: "center",
   },
   hr: {
     borderTop: "5px dotted white",
@@ -46,17 +47,19 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   typedContainer: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    // position: "absolute",
+    // top: "50%",
+    // left: "50%",
+    // transform: "translate(-50%, -50%)",
     width: "100%",
-    paddingTop: "2rem",
+    padding: "4rem 2rem",
     textAlign: "center",
     margin: "0 auto",
     zIndex: 1,
-    maxWidth: "600px",
+    maxWidth: "800px",
+   
     minWidth: "300px",
+    overflow: 'hidden'
     // height: "700px",
   },
   iconcontainer: {
@@ -87,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Header = () => {
+const HomeBody = () => {
   const classes = useStyles();
 
 
@@ -124,7 +127,7 @@ const Header = () => {
 
         {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} /> */}
       </Typography>
-      <Typography className={classes.iconcontainer} variant="div">
+      <Typography className={classes.iconcontainer} >
         <Button component={Link} href="https://www.linkedin.com/in/cedricwinbush/" target="_blank" className={classes.buttonstyle}>
           <LinkedInIcon className={classes.icons} />
         </Button>
@@ -140,4 +143,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeBody;

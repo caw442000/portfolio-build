@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
-import Header from "./Header";
+import HomeBody from "./HomeBody";
 import ParticleComponent from "./ParticleComponent";
 
 
@@ -12,21 +12,18 @@ const Home = () => {
       //   height: "100%",
       //   margin: "0",
       //   padding: "0",
+      //   flex: '1'
       // }}
     >
       <ParticleComponent />
-      <div
+      {/* <div
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
+          overflow: 'hidden'
         }}
-      >
+      > */}
         {/* <NavBar /> */}
-        <Header />
-      </div>
+        <HomeBody />
+      {/* </div> */}
     </div>
   );
 };

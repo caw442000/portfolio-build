@@ -7,6 +7,11 @@ const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
     overflowY: "scroll",
+    display: "flex",
+    flexDirection: 'column',
+    flex: '1',
+    width: "100%"
+    // paddingTop: '50px'
 
   },
   timeLine: {
@@ -109,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
 const Resume = () => {
   const classes = useStyles();
   return (
-    <>
+    <div className="resume__body">
       <Box component="header" className={`${classes.mainContainer} `}>
         <Typography variant="h4" align="center" className={classes.heading}>
           working experience
@@ -241,7 +246,7 @@ const Resume = () => {
           </Box>
         </Box>
       </Box>
-    </>
+    </div>
   );
 };
 
