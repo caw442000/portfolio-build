@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Home from "./Home";
-import { Route, Switch } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Resume from "./Resume";
 import Portfolio from "./Portfolio";
 
@@ -19,7 +19,7 @@ import {
   List,
   Typography,
   Box,
-  Drawer,
+  Drawer as MUIDrawer,
 } from "@material-ui/core";
 import {
   ArrowBack,
@@ -33,30 +33,13 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
 import { makeStyles } from "@material-ui/core/styles";
+import { menuItems } from './menuItems';
 
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 //CSS Styles
 
 const drawerWidth = 240;
 
-// const useStyles = makeStyles((theme) => ({
-//   menuSliderContainer: {
-//     width: 250,
-//     background: "#511",
-//     height: "100%",
-//     // paddingTop:"2rem"
-//   },
-//   avatar: {
-//     display: "block",
-//     margin: "2rem auto",
-//     // paddingBottom: '2rem',
-//     width: theme.spacing(20),
-//     height: theme.spacing(20),
-//   },
-//   listItem: {
-//     color: "tan",
-//   },
-// }));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -98,76 +81,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const menuItems = [
-  {
-    listIcon: <HomeIcon />,
-    listText: "Home",
-    listPath: "/",
-  },
-  {
-    listIcon: <AssignmentInd />,
-    listText: "Resume",
-    listPath: "/resume",
-  },
-  {
-    listIcon: <Apps />,
-    listText: "Portfolio",
-    listPath: "/portfolio",
-  },
-  {
-    listIcon: <ContactMail />,
-    listText: "Contacts",
-    listPath: "/contacts",
-  },
-];
 
 const SideBar = () => {
   const classes = useStyles();
-  // const sideList = () => (
-    
-  //   <Drawer
-  //     className={classes.drawer}
-  //     variant="permanent"
-  //     classes={{
-  //       paper: classes.drawerPaper,
-  //     }}
-  //   >
-  //     <Toolbar />
-  //     <div className={classes.drawerContainer}>
-  //       <Avatar
-  //         className={classes.avatar}
-  //         src={cedric}
-  //         alt="Cedric Winbush Jr"
-  //       />
-  //       <Divider />
-  //       <List>
-  //         {menuItems.map((lsItem, key) => (
-  //           <ListItem key={key} button component={Link} to={lsItem.listPath}>
-  //             <ListItemIcon className={classes.listItem}>
-  //               {lsItem.listIcon}
-  //             </ListItemIcon>
-  //             <ListItemText primary={lsItem.listText} />
-  //           </ListItem>
-  //         ))}
-  //       </List>
-  //       <Divider />
-  //       <List>
-  //         {["All mail", "Trash", "Spam"].map((text, index) => (
-  //           <ListItem button key={text}>
-  //             <ListItemIcon>
-  //               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-  //             </ListItemIcon>
-  //             <ListItemText primary={text} />
-  //           </ListItem>
-  //         ))}
-  //       </List>
-  //     </div>
-  //   </Drawer>
-  // );
+  const history = useHistory();
 
+  
+  
   return (
-    <Drawer
+    <MUIDrawer
     className={classes.drawer}
+    anchor="left"
     variant="permanent"
     classes={{
       paper: classes.drawerPaper,
@@ -183,7 +107,7 @@ const SideBar = () => {
       <Divider />
       <List>
         {menuItems.map((lsItem, key) => (
-          <ListItem key={key} button component={Link} to={lsItem.listPath}>
+          <ListItem button key={key} button onClick= {() => history.push(lsItem.listPath)}>
             <ListItemIcon className={classes.listItem}>
               {lsItem.listIcon}
             </ListItemIcon>
@@ -193,7 +117,7 @@ const SideBar = () => {
       </List>
 
     </div>
-  </Drawer>
+  </MUIDrawer>
   );
 };
 

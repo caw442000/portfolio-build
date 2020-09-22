@@ -127,7 +127,7 @@ const HomeBody = () => {
 
         {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} /> */}
       </Typography>
-      <Typography className={classes.iconcontainer} variant="div">
+      <Typography className={classes.iconcontainer} >
         <Button component={Link} href="https://www.linkedin.com/in/cedricwinbush/" target="_blank" className={classes.buttonstyle}>
           <LinkedInIcon className={classes.icons} />
         </Button>

@@ -1,11 +1,18 @@
-import React, { useState } from "react";
-import Home from './Home';
-import { Route, Switch } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import Home from "./Home";
+import {
+  Route,
+  Switch,
+  useHistory,
+  useParams,
+  withRouter,
+  useLocation,
+} from "react-router-dom";
 import Resume from "./Resume";
 import Portfolio from "./Portfolio";
 
-import MobileRightMenuSlider from "@material-ui/core/Drawer"
-import { Link } from 'react-router-dom'
+import MobileRightMenuSlider from "@material-ui/core/Drawer";
+import { Link } from "react-router-dom";
 import {
   Container,
   AppBar,
@@ -20,6 +27,9 @@ import {
   Typography,
   Box,
   Drawer,
+  Button,
+  MenuItem,
+  Menu,
 } from "@material-ui/core";
 import {
   ArrowBack,
@@ -27,16 +37,19 @@ import {
   Home as HomeIcon,
   Apps,
   ContactMail,
+  Menu as MenuIcon,
 } from "@material-ui/icons";
 
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { menuItems } from "./menuItems";
 
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
+import { render } from "@testing-library/react";
 //CSS Styles
-
 
 const drawerWidth = 240;
 
@@ -61,7 +74,9 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: "flex",
+    flexGrow: 1,
+    justifyContent: "Space-Between",
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -74,43 +89,59 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
   },
   drawerContainer: {
-    overflow: 'auto',
+    overflow: "auto",
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  topHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
 }));
 
-const menuItems = [
-  {
-    listIcon: <HomeIcon />,
-    listText: "Home",
-    listPath: '/'
-  },
-  {
-    listIcon: <AssignmentInd />,
-    listText: "Resume",
-    listPath: '/resume'
-  },
-  {
-    listIcon: <Apps />,
-    listText: "Portfolio",
-    listPath: "/portfolio"
-  },
-  {
-    listIcon: <ContactMail />,
-    listText: "Contacts",
-    listPath: "/contacts"
-  },
-];
-
 const NavBar = () => {
+  const params = useParams();
+  let location = useLocation();
+  console.log("params", params);
+  const history = useHistory();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+
+  const [navTitle, setNavTitle] = useState("");
+
+  useEffect(() => {
+    let renderTitle = location.pathname;
+
+    if (renderTitle === "/") {
+      setNavTitle("HOME");
+    } else {
+      renderTitle = renderTitle.replace(/\//g, "");
+      setNavTitle(renderTitle.toUpperCase());
+    }
+  }, [location]);
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClick = (pageURL) => {
+    history.push(pageURL);
+    setAnchorEl(null);
+  };
+
+  const handleButtonClick = (pageURL) => {
+    history.push(pageURL);
+  };
+
   // const [state, setState] = useState({
   //   right: false
   // })
   // const [mobileOpen, setMobileOpen] = useState(false);
-
 
   // const toggleSlider = (slider, open ) => () => {
   //   setState({...state, [slider]: open});
@@ -121,90 +152,63 @@ const NavBar = () => {
   //   setMobileOpen(() => !mobileOpen);
   // };
   const classes = useStyles();
-  const sideList = () => (
-    // <Box className={classes.menuSliderContainer} component="div">
-    //   <Avatar className={classes.avatar} src={cedric} alt="Cedric Winbush Jr" />
-    //   <Divider />
-    //   <List>
-    //     {menuItems.map((lsItem, key) => (
-    //       <ListItem key={key} button component={Link} to= {lsItem.listPath}>
-    //         <ListItemIcon className={classes.listItem}>
-    //           {lsItem.listIcon}
-    //         </ListItemIcon>
-    //         <ListItemText primary={lsItem.listText} />
-    //       </ListItem>
-    //     ))}
-    //   </List>
-    // </Box>
-    <Drawer
-    className={classes.drawer}
-    variant="permanent"
-    classes={{
-      paper: classes.drawerPaper,
-    }}
-  >
-    <Toolbar />
-    <div className={classes.drawerContainer}>
-      <List>
-      {menuItems.map((lsItem, key) => (
-          <ListItem key={key} button component={Link} to= {lsItem.listPath}>
-            <ListItemIcon className={classes.listItem}>
-              {lsItem.listIcon}
-            </ListItemIcon>
-            <ListItemText primary={lsItem.listText} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  </Drawer>
-  );
 
   return (
-      // <Box component="nav" style={{}} >
-      //   <AppBar  
-      //   elevation={0} 
-      //   // this is what will make the nav flat
-      //     style={{ top: '0', background: "#222"}}>
-      //     <Toolbar style={{ background: "#222", minHeight: "64px", paddingLeft: "24px", paddingRight: "24px"}}>
-      //       {/* <IconButton onClick={toggleSlider("right", true)}> */}
-      //       <IconButton onClick={handleDrawerToggle}>
-      //         <ArrowBack style={{ color: "tomato" }} />
-      //       </IconButton>
-      //       <Typography variant="h5" style={{ color: "tan" }}>
-      //         Portfolio
-      //       </Typography>
-      //       {/* <MobileRightMenuSlider anchor="right" open= {state.right} onClose = {toggleSlider("right", false)} >
-      //           {sideList("right")}
-      //       </MobileRightMenuSlider> */}
-      //       <MobileRightMenuSlider anchor="right" open= {mobileOpen} onClose = {handleDrawerToggle} >
-      //           {sideList()}
-      //       </MobileRightMenuSlider>
-      //     </Toolbar>
-      //   </AppBar>
-    
-        
-      // </Box>
-
-      <div className={classes.root}>
-      {/* <CssBaseline /> */}
-      <AppBar  elevation={0} position="fixed" className={classes.appBar} style={{ top: '0', background: "#222"}}>
-        <Toolbar>
+    <div className={classes.root}>
+      <AppBar
+        elevation={0}
+        position="fixed"
+        className={classes.appBar}
+        style={{ top: "0", background: "#222" }}
+      >
+        <Toolbar className={classes.topHeader}>
           <Typography variant="h6" noWrap>
-            Clipped drawer
+            {navTitle}
           </Typography>
+          {isMobile && (
+            <>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+                onClick={handleMenu}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={open}
+                onClose={() => setAnchorEl(null)}
+              >
+                {menuItems.map((menuItem, key) => {
+                  const { listText, listPath } = menuItem;
+                  return (
+                    <MenuItem
+                      key={key}
+                      onClick={() => handleMenuClick(listPath)}
+                    >
+                      {listText}
+                    </MenuItem>
+                  );
+                })}
+              </Menu>
+            </>
+          )}
         </Toolbar>
-      </AppBar> 
+      </AppBar>
     </div>
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);

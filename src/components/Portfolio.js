@@ -31,18 +31,114 @@ const Portfolio = () => {
                   SignLingo
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam debitis excepturi repellendus veniam quibusdam incidunt alias, nihil molestias repellat placeat quod eos est quo illo, dignissimos dolor eveniet sapiente consequuntur.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Numquam debitis excepturi repellendus veniam quibusdam
+                  incidunt alias, nihil molestias repellat placeat quod eos est
+                  quo illo, dignissimos dolor eveniet sapiente consequuntur.
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Live Demo
-                </Button>
-              </CardActions>
             </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Live Demo
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={8} md={6}>
+          <Card>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="SignLingo"
+                height="140"
+                image={signlingo}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5">
+                  SignLingo
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Numquam debitis excepturi repellendus veniam quibusdam
+                  incidunt alias, nihil molestias repellat placeat quod eos est
+                  quo illo, dignissimos dolor eveniet sapiente consequuntur.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Live Demo
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={8} md={6}>
+          <Card>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="SignLingo"
+                height="140"
+                image={signlingo}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5">
+                  SignLingo
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Numquam debitis excepturi repellendus veniam quibusdam
+                  incidunt alias, nihil molestias repellat placeat quod eos est
+                  quo illo, dignissimos dolor eveniet sapiente consequuntur.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Live Demo
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={8} md={6}>
+          <Card>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="SignLingo"
+                height="140"
+                image={signlingo}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5">
+                  SignLingo
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Numquam debitis excepturi repellendus veniam quibusdam
+                  incidunt alias, nihil molestias repellat placeat quod eos est
+                  quo illo, dignissimos dolor eveniet sapiente consequuntur.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Live Demo
+              </Button>
+            </CardActions>
           </Card>
         </Grid>
       </Grid>
