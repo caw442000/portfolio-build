@@ -75,7 +75,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    flexGrow: 1,
+    // flexGrow: 1,
     justifyContent: "Space-Between",
   },
   appBar: {
@@ -98,6 +98,8 @@ const useStyles = makeStyles((theme) => ({
   topHeader: {
     display: "flex",
     justifyContent: "space-between",
+    minHeight: "56px",
+    padding: "0 24px",
   },
 }));
 

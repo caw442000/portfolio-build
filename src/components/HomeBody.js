@@ -17,6 +17,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 import Icon from "@material-ui/core/Icon";
+import SocialButtons from "./SocialButtons";
 
 // CSS Styles
 
@@ -47,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   typedContainer: {
-    // position: "absolute",
+    // position: "fixed",
     // top: "50%",
     // left: "50%",
     // transform: "translate(-50%, -50%)",
@@ -127,14 +128,15 @@ const HomeBody = () => {
 
         {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} /> */}
       </Typography>
-      <Typography className={classes.iconcontainer} >
+        <SocialButtons />
+        {/* <Typography className={classes.iconcontainer} >
         <Button component={Link} href="https://www.linkedin.com/in/cedricwinbush/" target="_blank" className={classes.buttonstyle}>
           <LinkedInIcon className={classes.icons} />
         </Button>
         <Button component={Link} href="https://github.com/caw442000" target="_blank" className={classes.buttonstyle}>
           <GitHubIcon className={classes.icons} />
         </Button>
-      </Typography>
+      </Typography> */}
       <Typography className={classes.subtitle} variant="h6">
         HTML/CSS | SASS | LESS | Material-UI | JavaScript | React | Redux |
         ContextApi | NodeJS | Express | Postgres| MongoDB

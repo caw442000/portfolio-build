@@ -104,6 +104,9 @@ const SideBar = () => {
         src={cedric}
         alt="Cedric Winbush Jr"
       />
+      <List>
+        
+      </List>
       <Divider />
       <List>
         {menuItems.map((lsItem, key) => (
