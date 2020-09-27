@@ -94,11 +94,11 @@ const SideBar = () => {
     >
       <Toolbar />
       <div className={classes.drawerContainer}>
-        <Avatar
+        {/* <Avatar
           className={classes.avatar}
           src={cedric}
           alt="Cedric Winbush Jr"
-        />
+        /> */}
         <Typography className={classes.avatarText} variant="h5">
           Cedric Winbush Jr
         </Typography>

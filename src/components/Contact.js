@@ -59,16 +59,23 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     width: "600px",
+    margin: "0 auto"
   },
   container: {
-    margin: "0 auto",
-    width: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    paddingBottom: "20px",
+
+    
+    // width: "100%",
+    // height: "600px",
+    display: "flex",
+    alignItems: "center",
+    // paddingBottom: "20px",
 
   },
   paper: {
-    marginTop: theme.spacing(8),
+    // marginTop: theme.spacing(8),
+    margin: "10px auto",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    padding: "10px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
