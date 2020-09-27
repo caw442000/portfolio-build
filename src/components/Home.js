@@ -6,6 +6,7 @@ import ParticleComponent from "./ParticleComponent";
 
 const Home = () => {
   return (
+  
     <div
       style={{
         width: "100%",
@@ -25,6 +26,7 @@ const Home = () => {
         <HomeBody />
       {/* </div> */}
     </div>
+    // </>
   );
 };
 
