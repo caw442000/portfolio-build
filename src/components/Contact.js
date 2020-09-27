@@ -8,12 +8,13 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 
 import { Formik, Form } from "formik";
 import * as yup from "yup";
+import { tan } from "@material-ui/core/colors";
 
 let SignupSchema = yup.object().shape({
   name: yup.string().required("This field is required."),
@@ -21,19 +22,74 @@ let SignupSchema = yup.object().shape({
   message: yup.string().required("This field is required."),
 });
 
+const CssTextField = withStyles({
+  root: {
+    "& label.Mui-focused": {
+      color: "tan",
+      "& .MuiInputLabel": {
+        color: "tan",
+      },
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "tan",
+      color: "tan",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "tan",
+        color: "tan",
+      },
+      "&:hover fieldset": {
+        borderColor: "tan",
+        color: "tan",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "white",
+        color: "tan",
+      },
+    },
+  },
+})(TextField);
+
 const useStyles = makeStyles((theme) => ({
   "@global": {
     body: {
       backgroundColor: theme.palette.common.white,
     },
   },
+  root: {},
+  container: {
+    margin: "0 auto",
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "white",
-    opacity: "0.7"
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    color: "tan",
+    opacity: "0.7",
+  },
+  input: {
+    color: "tan",
+  },
+  text: {
+    // '& input:valid + fieldset': {
+    //   borderColor: 'tan',
+    //   borderWidth: 2,
+    // },
+    // '& input:invalid + fieldset': {
+    //   borderColor: 'red',
+    //   borderWidth: 2,
+    // },
+    // '& input:valid:focus + fieldset': {
+    //   borderLeftWidth: 6,
+    //   padding: '4px !important', // override inline-style
+    // },
+    // '&.Mui-focused fieldset': {
+    //   borderColor: 'green',
+    //   color: 'tan',
+    // },
   },
   avatar: {
     margin: theme.spacing(1),
@@ -45,6 +101,13 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    color: "tan",
+    backgroundColor: "#511",
+
+    '&:hover': {
+      color: "#511",
+    backgroundColor: "tan",
+    }
   },
 }));
 
@@ -83,10 +146,9 @@ const Contact = (props) => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
+    <Container className={classes.container} component="main" maxWidth="xs">
       <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
+        <Typography className={classes.text} component="h1" variant="h5">
           Contact Me
         </Typography>
         <Formik
@@ -98,7 +160,14 @@ const Contact = (props) => {
             <Form className={classes.form}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <TextField
+                  <CssTextField
+                    InputProps={{
+                      className: classes.input,
+                    }}
+                    InputLabelProps={{
+                      className: classes.input,
+                    }}
+                    className={classes.text}
                     error={errors.name && touched.name}
                     autoComplete="name"
                     name="name"
@@ -115,7 +184,14 @@ const Contact = (props) => {
                 </Grid>
 
                 <Grid item xs={12}>
-                  <TextField
+                  <CssTextField
+                    InputProps={{
+                      className: classes.input,
+                    }}
+                    InputLabelProps={{
+                      className: classes.input,
+                    }}
+                    className={classes.text}
                     error={errors.email && touched.email}
                     variant="outlined"
                     fullWidth
@@ -130,10 +206,19 @@ const Contact = (props) => {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField
+                  <CssTextField
+                    InputProps={{
+                      className: classes.input,
+                    }}
+                    InputLabelProps={{
+                      className: classes.input,
+                    }}
+                    className={classes.text}
                     error={errors.message && touched.message}
                     variant="outlined"
                     fullWidth
+                    multiline
+                    rows={4}
                     onChange={handleChange}
                     name="message"
                     label="Message"
@@ -152,16 +237,13 @@ const Contact = (props) => {
                 color="primary"
                 className={classes.submit}
               >
-                Sign Up
+                Submit
               </Button>
-              <Typography>
-                Already Have An Account <Link to="/login">Click Here</Link>
-              </Typography>
             </Form>
           )}
         </Formik>
+        <SocialButtons />
       </div>
-      <SocialButtons />
     </Container>
   );
 };
