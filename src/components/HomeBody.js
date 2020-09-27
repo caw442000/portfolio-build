@@ -41,16 +41,16 @@ const useStyles = makeStyles((theme) => ({
   },
   skillsContainer: {
     color: "tan",
-    marginTop: "2rem",
-    marginBottom: "2rem",
+    marginTop: "1rem",
+    marginBottom: "1rem",
     textAlign: "center",
     display: "flex",
-    flexDirection: "row",
+    
     // width: "100d%",
   },
   skillsTitle: {
     color: "tan",
-    margin: "1rem",
+    margin: "0 1rem",
    
     // textAlign: "center",
     // display: "flex",
@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
   skillsText: {
     color: "tan",
-    margin: "1rem",
+    margin: "0 1rem",
     textAlign: "center",
     
     flex: '1',

@@ -57,16 +57,21 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.common.white,
     },
   },
-  root: {},
+  root: {
+    width: "600px",
+  },
   container: {
     margin: "0 auto",
+    width: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    paddingBottom: "20px",
+
   },
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
     color: "tan",
     opacity: "0.7",
   },
