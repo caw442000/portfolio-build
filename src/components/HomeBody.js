@@ -6,7 +6,7 @@ import {
   Box,
   Link,
   IconButton,
-  Button
+  Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
@@ -17,15 +17,12 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 import Icon from "@material-ui/core/Icon";
+import SocialButtons from "./SocialButtons";
 
 // CSS Styles
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   '& > .fa': {
-  //     margin: theme.spacing(2),
-  //   },
-  // },
+
   avatar: {
     width: theme.spacing(30),
     height: theme.spacing(30),
@@ -40,6 +37,33 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "2rem",
     marginBottom: "2rem",
     textAlign: "center",
+
+  },
+  skillsContainer: {
+    color: "tan",
+    marginTop: "1rem",
+    marginBottom: "1rem",
+    textAlign: "center",
+    display: "flex",
+    
+    // width: "100d%",
+  },
+  skillsTitle: {
+    color: "tan",
+    margin: "0 1rem",
+   
+    // textAlign: "center",
+    // display: "flex",
+    
+
+  },
+  skillsText: {
+    color: "tan",
+    margin: "0 1rem",
+    textAlign: "center",
+    
+    flex: '1',
+
   },
   hr: {
     borderTop: "5px dotted white",
@@ -47,52 +71,26 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   typedContainer: {
-    // position: "absolute",
+    // position: "fixed",
     // top: "50%",
     // left: "50%",
     // transform: "translate(-50%, -50%)",
     width: "100%",
-    padding: "4rem 2rem",
+    // padding: "4rem 2rem",
     textAlign: "center",
-    margin: "0 auto",
+    margin: "80px auto 0 auto",
     zIndex: 1,
-    maxWidth: "800px",
-   
+    maxWidth: "600px",
+
     minWidth: "300px",
-    overflow: 'hidden'
+    overflow: "hidden",
     // height: "700px",
   },
-  iconcontainer: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "center",
-    // alignContent: "center",
-    // alignSelf: "center",
-    // alignItems: "center"
-  },
-  icons: {
-    color: "tan",
-    fontSize: "3rem",
-    margin: "0 1em",
-    transition: "transform 50ms ease-out",
-    "&:hover": {
-      background: 'transparent',
-      transform: "scale(1.2)",
-    }
-  },
-  buttonstyle: {
-    background: 'transparent',
-    // transition: "transform 50ms ease-out",
-    "&:hover": {
-      background: 'transparent',
-      // transform: "scale(1.2)",
-    }
-  }
+
 }));
 
 const HomeBody = () => {
   const classes = useStyles();
-
 
   return (
     <Box className={classes.typedContainer}>
@@ -100,11 +98,11 @@ const HomeBody = () => {
         <Avatar className={classes.avatar} src={cedric} alt="Cedric Winbush" />
       </Grid>
       <Typography className={classes.title} variant="h4">
-      Cedric Winbush Jr
+        Cedric Winbush Jr
         {/* <Typed strings={["Cedric Winbush Jr"]} typeSpeed={40} /> */}
       </Typography>
       <Typography className={classes.title} variant="h5">
-      Full Stack Web Developer
+        Full Stack Web Developer
         {/* <Typed strings={["Full Stack Web Developer"]} typeSpeed={40} /> */}
       </Typography>
 
@@ -127,17 +125,18 @@ const HomeBody = () => {
 
         {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} /> */}
       </Typography>
-      <Typography className={classes.iconcontainer} >
-        <Button component={Link} href="https://www.linkedin.com/in/cedricwinbush/" target="_blank" className={classes.buttonstyle}>
-          <LinkedInIcon className={classes.icons} />
-        </Button>
-        <Button component={Link} href="https://github.com/caw442000" target="_blank" className={classes.buttonstyle}>
-          <GitHubIcon className={classes.icons} />
-        </Button>
+      <SocialButtons />
+
+      <Typography className={classes.skillsContainer} variant="h6">
+        <p className={classes.skillsTitle}>Frontend:</p>
+        <p className={classes.skillsText}>
+          HTML/CSS | SASS | LESS | Material-UI | JavaScript | React | Redux |
+          ContextApi
+        </p>
       </Typography>
-      <Typography className={classes.subtitle} variant="h6">
-        HTML/CSS | SASS | LESS | Material-UI | JavaScript | React | Redux |
-        ContextApi | NodeJS | Express | Postgres| MongoDB
+      <Typography className={classes.skillsContainer} variant="h6">
+        <p className={classes.skillsTitle}>Backend:</p>
+        <p className={classes.skillsText}>NodeJS | Express | Postgres| MongoDB</p>
       </Typography>
     </Box>
   );

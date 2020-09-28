@@ -3,27 +3,18 @@ import NavBar from "./NavBar";
 import HomeBody from "./HomeBody";
 import ParticleComponent from "./ParticleComponent";
 
-
 const Home = () => {
   return (
     <div
-      // style={{
-      //   width: "100%",
-      //   height: "100%",
-      //   margin: "0",
-      //   padding: "0",
-      //   flex: '1'
-      // }}
+      style={{
+        width: "100%",
+        height: "100%",
+        margin: "0 auto",
+      }}
     >
       <ParticleComponent />
-      {/* <div
-        style={{
-          overflow: 'hidden'
-        }}
-      > */}
-        {/* <NavBar /> */}
-        <HomeBody />
-      {/* </div> */}
+
+      <HomeBody />
     </div>
   );
 };
