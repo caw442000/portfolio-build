@@ -22,7 +22,7 @@ export const portfolioItems = [
   {
     portfolioImage: choreTracker,
     PortfolioText: "A web app to gamify chores for the family",
-    PortfolioTitle: "Chare Tracker",
+    PortfolioTitle: "Chore Tracker",
     PortfolioStack: "React | Formik | Material UI",
   },
   {

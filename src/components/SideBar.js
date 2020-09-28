@@ -38,7 +38,7 @@ import { menuItems } from "./menuItems";
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 //CSS Styles
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,6 +77,11 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
     textAlign: "center",
   },
+  avatarEmail: {
+    color: "tan",
+    textAlign: "center",
+    margin: "10px auto"
+  },
 }));
 
 const SideBar = () => {
@@ -94,15 +99,15 @@ const SideBar = () => {
     >
       <Toolbar />
       <div className={classes.drawerContainer}>
-        {/* <Avatar
+        <Avatar
           className={classes.avatar}
           src={cedric}
           alt="Cedric Winbush Jr"
-        /> */}
-        <Typography className={classes.avatarText} variant="h5">
+        />
+        <Typography className={classes.avatarText} variant="h6">
           Cedric Winbush Jr
         </Typography>
-        <p className={classes.avatarText} >
+        <p className={classes.avatarEmail} >
         cawinbushjr@gmail.com
         </p>
 

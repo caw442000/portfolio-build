@@ -40,11 +40,11 @@ const CssTextField = withStyles({
         color: "tan",
       },
       "&:hover fieldset": {
-        borderColor: "tan",
+        borderColor: "#511",
         color: "tan",
       },
       "&.Mui-focused fieldset": {
-        borderColor: "white",
+        borderColor: "tan",
         color: "tan",
       },
     },

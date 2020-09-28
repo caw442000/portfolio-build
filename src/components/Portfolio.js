@@ -27,12 +27,17 @@ const useStyles = makeStyles((theme) => ({
   containerBox: {
     // display: "flex",
     width: "100%",
+    // margin: "0 auto",
+    // display: "flex",
+    // justifyContent: "space-between",
+    // alignItems:"center"
   },
   card: {
     width: "350px",
     minWidth: "370px",
     maxWidth: "400px",
-
+    display: "flex",
+    alignItems: "center",
     margin: "10px",
   },
   text: {
