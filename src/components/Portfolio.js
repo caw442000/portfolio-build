@@ -17,20 +17,20 @@ import { portfolioItems } from "./portfolioItems";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    justifyContent: "center",
-    margin: "0 auto",
-    // alignContent: "center",
-    width: "100%",
-    // height: "100%"
+    // display: "flex",
+    // justifyContent: "center",
+    // margin: "0 auto",
+    // // alignContent: "center",
+    // width: "100%",
+    // // height: "100%"
   },
   containerBox: {
-    // display: "flex",
-    width: "100%",
-    // margin: "0 auto",
-    // display: "flex",
-    // justifyContent: "space-between",
-    // alignItems:"center"
+    // // display: "flex",
+    // width: "100%",
+    // // margin: "0 auto",
+    // // display: "flex",
+    // // justifyContent: "space-between",
+    // // alignItems:"center"
   },
   card: {
     width: "350px",
@@ -54,7 +54,7 @@ const Portfolio = () => {
     <Box  className={classes.containerBox}component="div">
       <Grid className={classes.root} container justify="center" alignItems="center">
         {portfolioItems.map((item, index) => (
-          <Grid className={classes.card} key={index} item xs={12} sm={6} md={4}>
+          <Grid className={classes.card} key={index} item xs={12} sm={6} md={3}>
             <Card >
               <CardActionArea>
                 <CardMedia
