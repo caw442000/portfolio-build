@@ -38,7 +38,7 @@ import { menuItems } from "./menuItems";
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 //CSS Styles
 
-const drawerWidth = 200;
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,7 +80,10 @@ const useStyles = makeStyles((theme) => ({
   avatarEmail: {
     color: "tan",
     textAlign: "center",
-    margin: "10px auto"
+    margin: "10px auto",
+    display: "flex",  
+    // justifyContent: "space-around",
+    alignItems: "center"
   },
 }));
 
@@ -107,9 +110,10 @@ const SideBar = () => {
         <Typography className={classes.avatarText} variant="h6">
           Cedric Winbush Jr
         </Typography>
-        <p className={classes.avatarEmail} >
-        cawinbushjr@gmail.com
-        </p>
+        <div className={classes.avatarEmail}>
+          <MailIcon />
+          <p>cawinbushjr@gmail.com</p>
+        </div>
 
         <Divider />
         <List>
