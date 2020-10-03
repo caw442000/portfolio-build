@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import emailjs from "emailjs-com";
 import SocialButtons from "./SocialButtons";
 
 import { useHistory } from "react-router-dom";
@@ -59,17 +60,14 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     width: "600px",
-    margin: "0 auto"
+    margin: "0 auto",
   },
   container: {
-
-    
     // width: "100%",
     // height: "600px",
     display: "flex",
     alignItems: "center",
     // paddingBottom: "20px",
-
   },
   paper: {
     // marginTop: theme.spacing(8),
@@ -116,10 +114,10 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
     backgroundColor: "#511",
 
-    '&:hover': {
+    "&:hover": {
       color: "#511",
-    backgroundColor: "tan",
-    }
+      backgroundColor: "tan",
+    },
   },
 }));
 
@@ -133,10 +131,21 @@ const Contact = (props) => {
   });
   const history = useHistory();
 
-  const FormSubmit = (
-    values,
-    { setSubmitting, resetForm, setStatus, status }
-  ) => {
+  const FormSubmit = (values) => {
+    console.log("values", values);
+    emailjs
+      .sendForm(
+
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
     // console.log(values);
     // axios
     //   .post("https://choretracker01.herokuapp.com/api/auth/register", values)
@@ -209,7 +218,7 @@ const Contact = (props) => {
                     fullWidth
                     onChange={handleChange}
                     id="email"
-                    label="Email Address"
+                    label="Email"
                     name="email"
                     autoComplete="email"
                     helperText={
@@ -258,6 +267,31 @@ const Contact = (props) => {
       </div>
     </Container>
   );
+  // function sendEmail(e) {
+  //   e.preventDefault();
+
+  //   console.log("target", e.target)
+
+
+  //     .then((result) => {
+  //         console.log(result.text);
+  //     }, (error) => {
+  //         console.log(error.text);
+  //     });
+  // }
+
+  // return (
+  //   <form className="contact-form" onSubmit={sendEmail}>
+  //     <input type="hidden" name="contact_number" />
+  //     <label>Name</label>
+  //     <input type="text" name="user_name" />
+  //     <label>Email</label>
+  //     <input type="email" name="user_email" />
+  //     <label>Message</label>
+  //     <textarea name="message" />
+  //     <input type="submit" value="Send" />
+  //   </form>
+  // );
 };
 
 export default Contact;
