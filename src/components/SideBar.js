@@ -107,7 +107,7 @@ const SideBar = () => {
           src={cedric}
           alt="Cedric Winbush Jr"
         />
-        <Typography className={classes.avatarText} variant="h6">
+        <Typography className={classes.avatarText} variant="h5">
           Cedric Winbush Jr
         </Typography>
         <div className={classes.avatarEmail}>
