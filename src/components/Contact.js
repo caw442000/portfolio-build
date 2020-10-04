@@ -79,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: "tan",
     opacity: "0.7",
+    borderRadius: "25px",
   },
   input: {
     color: "tan",
@@ -108,6 +109,7 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: "100%",
     marginTop: theme.spacing(3),
+   
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
