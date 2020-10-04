@@ -121,6 +121,8 @@ const NavBar = () => {
 
     if (renderTitle === "/") {
       setNavTitle("HOME");
+    } else if (renderTitle === "/portfolio-build") {
+      setNavTitle("HOME");
     } else {
       renderTitle = renderTitle.replace(/\//g, "");
       setNavTitle(renderTitle.toUpperCase());
