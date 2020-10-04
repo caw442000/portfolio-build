@@ -15,13 +15,47 @@ import {
 
 import { portfolioItems } from "./portfolioItems";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    // display: "flex",
+    // justifyContent: "center",
+    // margin: "0 auto",
+    // // alignContent: "center",
+    // width: "100%",
+    // // height: "100%"
+  },
+  containerBox: {
+    // // display: "flex",
+    // width: "100%",
+    // // margin: "0 auto",
+    // // display: "flex",
+    // // justifyContent: "space-between",
+    // // alignItems:"center"
+  },
+  card: {
+    width: "350px",
+    minWidth: "370px",
+    maxWidth: "400px",
+    display: "flex",
+    alignItems: "center",
+    margin: "10px",
+  },
+  text: {
+    height: "30px"
+  }
+  
+}));
+
 const Portfolio = () => {
+
+  const classes = useStyles();
+
   return (
-    <Box component="div">
-      <Grid container justify="center" alignItems="center">
+    <Box  className={classes.containerBox}component="div">
+      <Grid className={classes.root} container justify="center" alignItems="center">
         {portfolioItems.map((item, index) => (
-          <Grid item xs={12} sm={8} md={6}>
-            <Card>
+          <Grid className={classes.card} key={index} item xs={12} sm={6} md={3}>
+            <Card >
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -37,6 +71,7 @@ const Portfolio = () => {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.text}
                   >
                     {item.PortfolioText}
                   </Typography>

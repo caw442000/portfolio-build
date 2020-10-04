@@ -7,7 +7,7 @@ import weightLifting from "../assets/images/workout.jpg";
 export const portfolioItems = [
   {
     portfolioImage: signlingo,
-    PortfolioText: "Home",
+    PortfolioText: "A mobile first web app for teaching a gamified ASL curriculum",
     PortfolioTitle: "SignLingo",
     PortfolioStack: "ReactJS | Redux | Node.js | Express.js | Postgres | Material UI | SASS",
     
@@ -15,19 +15,19 @@ export const portfolioItems = [
   },
   {
     portfolioImage: betterProfessor,
-    PortfolioText: "Resume",
+    PortfolioText: "A web app to allow professors to track there students project deadlines",
     PortfolioTitle: "Better Professor",
     PortfolioStack: "React | ContextAPI | Material UI | Styled-Compoents | Node | Express",
   },
   {
     portfolioImage: choreTracker,
-    PortfolioText: "Portfolio",
-    PortfolioTitle: "Chare Tracker",
+    PortfolioText: "A web app to gamify chores for the family",
+    PortfolioTitle: "Chore Tracker",
     PortfolioStack: "React | Formik | Material UI",
   },
   {
     portfolioImage: weightLifting,
-    PortfolioText: "Contact",
+    PortfolioText: "A landing page for a Weight Lifting Journal web app",
     PortfolioTitle: "Better Weight Lifting Journal",
     PortfolioStack: "HTML | CSS | LESS",
   },

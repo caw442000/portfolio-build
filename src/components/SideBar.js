@@ -77,6 +77,14 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
     textAlign: "center",
   },
+  avatarEmail: {
+    color: "tan",
+    textAlign: "center",
+    margin: "10px auto",
+    display: "flex",  
+    // justifyContent: "space-around",
+    alignItems: "center"
+  },
 }));
 
 const SideBar = () => {
@@ -94,17 +102,18 @@ const SideBar = () => {
     >
       <Toolbar />
       <div className={classes.drawerContainer}>
-        {/* <Avatar
+        <Avatar
           className={classes.avatar}
           src={cedric}
           alt="Cedric Winbush Jr"
-        /> */}
-        <Typography className={classes.avatarText} variant="h5">
+        />
+        <Typography className={classes.avatarText} variant="h6">
           Cedric Winbush Jr
         </Typography>
-        <p className={classes.avatarText} >
-        cawinbushjr@gmail.com
-        </p>
+        <div className={classes.avatarEmail}>
+          <MailIcon />
+          <p>cawinbushjr@gmail.com</p>
+        </div>
 
         <Divider />
         <List>
