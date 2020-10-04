@@ -33,9 +33,9 @@ function App() {
 
           <div className="main__app__body">
             <Switch>
-              <Route path="/resume">
+              {/* <Route path="/resume">
                 <Resume />
-              </Route>
+              </Route> */}
               <Route path="/portfolio">
                 <Portfolio />
               </Route>
