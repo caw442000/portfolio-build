@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   containerBox: {
     // // display: "flex",
     // width: "100%",
-    // // margin: "0 auto",
+    margin: "0 auto",
     // // display: "flex",
     // // justifyContent: "space-between",
     // // alignItems:"center"

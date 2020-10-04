@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     margin: "10px auto",
     display: "flex",  
-    // justifyContent: "space-around",
+    justifyContent: "space-around",
     alignItems: "center"
   },
 }));
