@@ -13,7 +13,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 
-import { Formik, Form } from "formik";
+import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
 import * as yup from "yup";
 import { tan } from "@material-ui/core/colors";
 
@@ -147,6 +147,8 @@ const Contact = (props) => {
           console.log(error.text);
         }
       );
+
+      history.push('/')
 
     // console.log(values);
     // axios
