@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/portfolio-build/static/css/main.6fd720ba.chunk.css",
+    "main.js": "/portfolio-build/static/js/main.89216d20.chunk.js",
+    "main.js.map": "/portfolio-build/static/js/main.89216d20.chunk.js.map",
+    "runtime-main.js": "/portfolio-build/static/js/runtime-main.586a285d.js",
+    "runtime-main.js.map": "/portfolio-build/static/js/runtime-main.586a285d.js.map",
+    "static/js/2.4c0d15ab.chunk.js": "/portfolio-build/static/js/2.4c0d15ab.chunk.js",
+    "static/js/2.4c0d15ab.chunk.js.map": "/portfolio-build/static/js/2.4c0d15ab.chunk.js.map",
+    "index.html": "/portfolio-build/index.html",
+    "precache-manifest.21821a73ab841d90ae317454db503010.js": "/portfolio-build/precache-manifest.21821a73ab841d90ae317454db503010.js",
+    "service-worker.js": "/portfolio-build/service-worker.js",
+    "static/css/main.6fd720ba.chunk.css.map": "/portfolio-build/static/css/main.6fd720ba.chunk.css.map",
+    "static/js/2.4c0d15ab.chunk.js.LICENSE.txt": "/portfolio-build/static/js/2.4c0d15ab.chunk.js.LICENSE.txt",
+    "static/media/cedric-winbush-wbg.jpg": "/portfolio-build/static/media/cedric-winbush-wbg.fedb3541.jpg",
+    "static/media/App.css": "/portfolio-build/static/media/coffee-apple.2dd213aa.jpg",
+    "static/media/signlingo.png": "/portfolio-build/static/media/signlingo.32ae300b.png",
+    "static/media/teaching.jpg": "/portfolio-build/static/media/teaching.70bcef9b.jpg",
+    "static/media/washing-dishes.jpg": "/portfolio-build/static/media/washing-dishes.3e9af902.jpg",
+    "static/media/workout.jpg": "/portfolio-build/static/media/workout.8bed36f2.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.586a285d.js",
+    "static/js/2.4c0d15ab.chunk.js",
+    "static/css/main.6fd720ba.chunk.css",
+    "static/js/main.89216d20.chunk.js"
+  ]
+}
