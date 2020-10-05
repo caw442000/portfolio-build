@@ -17,9 +17,9 @@ import { Form, Formik, FormikHelpers, FormikProps } from "formik";
 import * as yup from "yup";
 import { tan } from "@material-ui/core/colors";
 
-const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
-const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
-const USER_ID = process.env.REACT_APP_USER_ID;
+const SERVICE_ID = process.env.SERVICE_ID;
+const TEMPLATE_ID = process.env.TEMPLATE_ID;
+const USER_ID = process.env.USER_ID;
 
 let SignupSchema = yup.object().shape({
   name: yup.string().required("This field is required."),
@@ -162,7 +162,6 @@ const Contact = (props) => {
       name: "",
       username: "",
       email: "",
-      password: "",
     };
     resetForm(values);
 
