@@ -165,9 +165,13 @@ const Contact = (props) => {
     // history.push("/");
 
     // setTimeout(() => {
-
+      
+      
+  
     //   console.log("new values", values);
     // }, 3000);
+    
+   
   }
 
   // console.log(values);
@@ -208,7 +212,7 @@ const Contact = (props) => {
             status,
             handleReset,
             resetForm,
-            values,
+            values
           }) => (
             <Form className={classes.form}>
               <Grid container spacing={2}>
@@ -230,7 +234,7 @@ const Contact = (props) => {
                     id="name"
                     label="Name"
                     autoFocus
-                    value={values.name || ""} // <= Suggested change
+                    value={values.name || ''} // <= Suggested change
                     helperText={
                       errors.name && touched.name ? errors.name : null
                     }
@@ -254,7 +258,7 @@ const Contact = (props) => {
                     label="Email"
                     name="email"
                     autoComplete="email"
-                    value={values.email || ""} // <= Suggested change
+                    value={values.email || ''} // <= Suggested change
                     helperText={
                       errors.email && touched.email ? errors.email : null
                     }
@@ -279,7 +283,7 @@ const Contact = (props) => {
                     label="Message"
                     type="message"
                     id="message"
-                    value={values.message || ""} // <= Suggested change
+                    value={values.message || ''} // <= Suggested change
                     helperText={
                       errors.message && touched.message ? errors.message : null
                     }
