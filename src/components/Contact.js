@@ -13,9 +13,13 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 
-import { Form, Formik, FormikHelpers, FormikProps } from 'formik'
+import { Form, Formik, FormikHelpers, FormikProps } from "formik";
 import * as yup from "yup";
 import { tan } from "@material-ui/core/colors";
+
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+const USER_ID = process.env.REACT_APP_USER_ID;
 
 let SignupSchema = yup.object().shape({
   name: yup.string().required("This field is required."),
@@ -109,7 +113,6 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: "100%",
     marginTop: theme.spacing(3),
-   
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -133,42 +136,57 @@ const Contact = (props) => {
   });
   const history = useHistory();
 
-  const FormSubmit = (values) => {
-    console.log("values", values);
-    emailjs
-      .sendForm(
+  function sendEmail(values, { resetForm }) {
+    // e.preventDefault();
+    console.log("the values", values);
+    // console.log("target", e.target)
 
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    let templateValues = {
+      name: values.name,
+      email: values.email,
+      message: values.message,
+    };
 
-      history.push('/')
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateValues, USER_ID).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
 
-    // console.log(values);
-    // axios
-    //   .post("https://choretracker01.herokuapp.com/api/auth/register", values)
-    //     .then(res => {
-    //       console.log("success", res);
-    //       console.log("this is response data", res.data)
-    //       console.log("initial values", initialValues);
-    //       values = ({
-    //       name: "",
-    //       username: "",
-    //       email: "",
-    //       password: ""})
-    //       setStatus(res.data);
-    //       localStorage.setItem("token", res.data.token);
-    //       localStorage.setItem("id", res.data.id)
-    //       history.push('/dashboard') // Redirect to Dashboard
-    //   })
-    //   .catch(error => console.log(error.response, "Didn't work"));
-  };
+    // history.push("/");
+    
+    values = {
+      name: "",
+      username: "",
+      email: "",
+      password: "",
+    };
+    resetForm(values);
+
+    console.log("new values", values);
+  }
+
+  // console.log(values);
+  // axios
+  //   .post("https://choretracker01.herokuapp.com/api/auth/register", values)
+  //     .then(res => {
+  //       console.log("success", res);
+  //       console.log("this is response data", res.data)
+  //       console.log("initial values", initialValues);
+  //       values = ({
+  //       name: "",
+  //       username: "",
+  //       email: "",
+  //       password: ""})
+  //       setStatus(res.data);
+  //       localStorage.setItem("token", res.data.token);
+  //       localStorage.setItem("id", res.data.id)
+  //       history.push('/dashboard') // Redirect to Dashboard
+  //   })
+  //   .catch(error => console.log(error.response, "Didn't work"));
 
   return (
     <Container className={classes.container} component="main" maxWidth="xs">
@@ -179,9 +197,18 @@ const Contact = (props) => {
         <Formik
           initialValues={initialValues}
           validationSchema={SignupSchema}
-          onSubmit={FormSubmit}
+          onSubmit={sendEmail}
+          className="contact-form"
         >
-          {({ errors, handleChange, touched, status, handleReset }) => (
+          {({
+            errors,
+            handleChange,
+            touched,
+            status,
+            handleReset,
+            resetForm,
+            values
+          }) => (
             <Form className={classes.form}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
@@ -202,6 +229,7 @@ const Contact = (props) => {
                     id="name"
                     label="Name"
                     autoFocus
+                    value={values.name || ''} // <= Suggested change
                     helperText={
                       errors.name && touched.name ? errors.name : null
                     }
@@ -225,6 +253,7 @@ const Contact = (props) => {
                     label="Email"
                     name="email"
                     autoComplete="email"
+                    value={values.email || ''} // <= Suggested change
                     helperText={
                       errors.email && touched.email ? errors.email : null
                     }
@@ -249,6 +278,7 @@ const Contact = (props) => {
                     label="Message"
                     type="message"
                     id="message"
+                    value={values.message || ''} // <= Suggested change
                     helperText={
                       errors.message && touched.message ? errors.message : null
                     }
@@ -261,41 +291,18 @@ const Contact = (props) => {
                 variant="contained"
                 color="primary"
                 className={classes.submit}
+                // onClick={() => resetForm(initialValues)}
               >
                 Submit
               </Button>
             </Form>
           )}
         </Formik>
+
         <SocialButtons />
       </div>
     </Container>
   );
-  // function sendEmail(e) {
-  //   e.preventDefault();
-
-  //   console.log("target", e.target)
-
-
-  //     .then((result) => {
-  //         console.log(result.text);
-  //     }, (error) => {
-  //         console.log(error.text);
-  //     });
-  // }
-
-  // return (
-  //   <form className="contact-form" onSubmit={sendEmail}>
-  //     <input type="hidden" name="contact_number" />
-  //     <label>Name</label>
-  //     <input type="text" name="user_name" />
-  //     <label>Email</label>
-  //     <input type="email" name="user_email" />
-  //     <label>Message</label>
-  //     <textarea name="message" />
-  //     <input type="submit" value="Send" />
-  //   </form>
-  // );
 };
 
 export default Contact;
