@@ -150,6 +150,12 @@ const Contact = (props) => {
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateValues, USER_ID).then(
       (result) => {
         console.log(result.text);
+        values = {
+          name: "",
+          username: "",
+          email: "",
+        };
+        resetForm(values);
       },
       (error) => {
         console.log(error.text);
@@ -157,15 +163,15 @@ const Contact = (props) => {
     );
 
     // history.push("/");
-    
-    values = {
-      name: "",
-      username: "",
-      email: "",
-    };
-    resetForm(values);
 
-    console.log("new values", values);
+    // setTimeout(() => {
+      
+      
+  
+    //   console.log("new values", values);
+    // }, 3000);
+    
+   
   }
 
   // console.log(values);
