@@ -17,9 +17,9 @@ import { Form, Formik, FormikHelpers, FormikProps } from "formik";
 import * as yup from "yup";
 import { tan } from "@material-ui/core/colors";
 
-const SERVICE_ID = process.env.SERVICE_ID;
-const TEMPLATE_ID = process.env.TEMPLATE_ID;
-const USER_ID = process.env.USER_ID;
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+const USER_ID = process.env.REACT_APP_USER_ID;
 
 let SignupSchema = yup.object().shape({
   name: yup.string().required("This field is required."),
@@ -165,13 +165,9 @@ const Contact = (props) => {
     // history.push("/");
 
     // setTimeout(() => {
-      
-      
-  
+
     //   console.log("new values", values);
     // }, 3000);
-    
-   
   }
 
   // console.log(values);
@@ -212,7 +208,7 @@ const Contact = (props) => {
             status,
             handleReset,
             resetForm,
-            values
+            values,
           }) => (
             <Form className={classes.form}>
               <Grid container spacing={2}>
@@ -234,7 +230,7 @@ const Contact = (props) => {
                     id="name"
                     label="Name"
                     autoFocus
-                    value={values.name || ''} // <= Suggested change
+                    value={values.name || ""} // <= Suggested change
                     helperText={
                       errors.name && touched.name ? errors.name : null
                     }
@@ -258,7 +254,7 @@ const Contact = (props) => {
                     label="Email"
                     name="email"
                     autoComplete="email"
-                    value={values.email || ''} // <= Suggested change
+                    value={values.email || ""} // <= Suggested change
                     helperText={
                       errors.email && touched.email ? errors.email : null
                     }
@@ -283,7 +279,7 @@ const Contact = (props) => {
                     label="Message"
                     type="message"
                     id="message"
-                    value={values.message || ''} // <= Suggested change
+                    value={values.message || ""} // <= Suggested change
                     helperText={
                       errors.message && touched.message ? errors.message : null
                     }
