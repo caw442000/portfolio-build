@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     height: "30px",
+    color: "black",
   },
   textStack: {
     height: "30px",
@@ -61,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    justifyContent:"space-between",
     transition: "transform 50ms ease-out",
     textDecoration: "none",
     "&:hover": {
@@ -72,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
   iconHolder: {
     display: "flex",
     justifyContent: "space-between",
-    padding: "0 1em",
+    padding: "1em",
   },
 }));
 
