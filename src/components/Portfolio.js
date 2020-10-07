@@ -11,7 +11,11 @@ import {
   CardMedia,
   Button,
   Typography,
+  Link,
 } from "@material-ui/core";
+import {AssignmentInd } from "@material-ui/icons";
+import GitHubIcon from "@material-ui/icons/GitHub";
+
 
 import { portfolioItems } from "./portfolioItems";
 
@@ -41,21 +45,50 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
   },
   text: {
-    height: "30px"
-  }
-  
+    height: "30px",
+  },
+  textStack: {
+    height: "30px",
+    color: "black",
+    margin: "1em 0 2em auto",
+    textAlign: "left",
+  },
+  icons: {
+    // color: "tan",
+    fontSize: "2rem",
+    margin: "5px",
+    // margin: "0 1em",
+    transition: "transform 50ms ease-out",
+    "&:hover": {
+      background: "transparent",
+      transform: "scale(1.2)",
+    },
+  },
+  linkStyle: {
+    color: "black",
+
+    // transition: "transform 50ms ease-out",
+    "&:hover": {
+      background: "transparent",
+      // transform: "scale(1.2)",
+    },
+  },
 }));
 
 const Portfolio = () => {
-
   const classes = useStyles();
 
   return (
-    <Box  className={classes.containerBox}component="div">
-      <Grid className={classes.root} container justify="center" alignItems="center">
+    <Box className={classes.containerBox} component="div">
+      <Grid
+        className={classes.root}
+        container
+        justify="center"
+        alignItems="center"
+      >
         {portfolioItems.map((item, index) => (
           <Grid className={classes.card} key={index} item xs={12} sm={6} md={3}>
-            <Card >
+            <Card>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -65,7 +98,15 @@ const Portfolio = () => {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5">
-                    {item.PortfolioTitle}
+                    {item.portfolioTitle}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                    className={classes.textStack}
+                  >
+                    {item.portfolioStack}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -73,17 +114,19 @@ const Portfolio = () => {
                     component="p"
                     className={classes.text}
                   >
-                    {item.PortfolioText}
+                    {item.portfolioText}
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Github
-                </Button>
-                <Button size="small" color="primary">
-                  Live Demo
-                </Button>
+                <Link
+                  component={Link}
+                  href={item.portfolioGithub}
+                  target="_blank"
+                  className={classes.linkStyle}
+                >
+                  <GitHubIcon className={classes.icons} />
+                </Link>
               </CardActions>
             </Card>
           </Grid>

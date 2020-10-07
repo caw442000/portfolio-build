@@ -7,28 +7,39 @@ import weightLifting from "../assets/images/workout.jpg";
 export const portfolioItems = [
   {
     portfolioImage: signlingo,
-    PortfolioText: "A mobile first web app for teaching a gamified ASL curriculum",
-    PortfolioTitle: "SignLingo",
-    PortfolioStack: "ReactJS | Redux | Node.js | Express.js | Postgres | Material UI | SASS",
+    portfolioText: "A mobile first web app for teaching a gamified ASL curriculum",
+    portfolioTitle: "SignLingo",
+    portfolioStack: "ReactJS | Redux | Node.js | Express.js | Postgres | Material UI | SASS",
+    portfolioGithub: "https://github.com/Lambda-School-Labs/signlingo-fe",
+    portfolioLiveLink: "",
     
     
   },
   {
     portfolioImage: betterProfessor,
-    PortfolioText: "A web app to allow professors to track there students project deadlines",
-    PortfolioTitle: "Better Professor",
-    PortfolioStack: "React | ContextAPI | Material UI | Styled-Compoents | Node | Express",
+    portfolioText: "A web app to allow professors to track there students project deadlines",
+    portfolioTitle: "Better Professor",
+    portfolioStack: "React | ContextAPI | Material UI | Styled-Compoents | Node | Express",
+    portfolioGithub: "https://github.com/BW-A-Better-Professor-App/Better-Professor-FE",
+    portfolioLiveLink: "",
+
   },
   {
     portfolioImage: choreTracker,
-    PortfolioText: "A web app to gamify chores for the family",
-    PortfolioTitle: "Chore Tracker",
-    PortfolioStack: "React | Formik | Material UI",
+    portfolioText: "A web app to gamify chores for the family",
+    portfolioTitle: "Chore Tracker",
+    portfolioStack: "React | Formik | Material UI",
+    portfolioGithub: "https://github.com/Build-Week-Home-Chore-Tracker-2020/Front-End",
+    portfolioLiveLink: "",
+
   },
   {
     portfolioImage: weightLifting,
-    PortfolioText: "A landing page for a Weight Lifting Journal web app",
-    PortfolioTitle: "Better Weight Lifting Journal",
-    PortfolioStack: "HTML | CSS | LESS",
+    portfolioText: "A landing page for a Weight Lifting Journal web app",
+    portfolioTitle: "Better Weight Lifting Journal",
+    portfolioStack: "HTML | CSS | LESS",
+    portfolioGithub: "https://github.com/BW-Weight-Lifting-Journal-6/Marketing-Page",
+    portfolioLiveLink: "",
+
   },
 ];
