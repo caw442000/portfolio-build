@@ -13,9 +13,8 @@ import {
   Typography,
   Link,
 } from "@material-ui/core";
-import {AssignmentInd } from "@material-ui/icons";
+import LinkIcon from "@material-ui/icons/Link";
 import GitHubIcon from "@material-ui/icons/GitHub";
-
 
 import { portfolioItems } from "./portfolioItems";
 
@@ -58,20 +57,24 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2rem",
     margin: "5px",
     // margin: "0 1em",
-    transition: "transform 50ms ease-out",
-    "&:hover": {
-      background: "transparent",
-      transform: "scale(1.2)",
-    },
   },
   linkStyle: {
     color: "black",
-
-    // transition: "transform 50ms ease-out",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    transition: "transform 50ms ease-out",
+    textDecoration: "none",
     "&:hover": {
       background: "transparent",
-      // transform: "scale(1.2)",
+      transform: "scale(1.2)",
+      textDecoration: "none",
     },
+  },
+  iconHolder: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "0 1em",
   },
 }));
 
@@ -118,7 +121,7 @@ const Portfolio = () => {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
+              <CardActions className={classes.iconHolder}>
                 <Link
                   component={Link}
                   href={item.portfolioGithub}
@@ -126,6 +129,30 @@ const Portfolio = () => {
                   className={classes.linkStyle}
                 >
                   <GitHubIcon className={classes.icons} />
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                    className={classes.text}
+                  >
+                    Github
+                  </Typography>
+                </Link>
+                <Link
+                  component={Link}
+                  href={item.portfolioLiveLink}
+                  target="_blank"
+                  className={classes.linkStyle}
+                >
+                  <LinkIcon className={classes.icons} />
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                    className={classes.text}
+                  >
+                    Live Site
+                  </Typography>
                 </Link>
               </CardActions>
             </Card>

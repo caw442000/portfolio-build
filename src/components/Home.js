@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "./NavBar";
 import HomeBody from "./HomeBody";
 import ParticleComponent from "./ParticleComponent";
 

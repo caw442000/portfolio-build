@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import SocialButtons from "./SocialButtons";
 
 import { useHistory } from "react-router-dom";
 // import axios from "axios";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
+
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { Link } from "react-router-dom";
 
-import { Form, Formik, FormikHelpers, FormikProps } from "formik";
+import { Form, Formik } from "formik";
 import * as yup from "yup";
-import { tan } from "@material-ui/core/colors";
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
@@ -165,13 +163,9 @@ const Contact = (props) => {
     // history.push("/");
 
     // setTimeout(() => {
-      
-      
-  
+
     //   console.log("new values", values);
     // }, 3000);
-    
-   
   }
 
   // console.log(values);
@@ -212,7 +206,7 @@ const Contact = (props) => {
             status,
             handleReset,
             resetForm,
-            values
+            values,
           }) => (
             <Form className={classes.form}>
               <Grid container spacing={2}>
@@ -234,7 +228,7 @@ const Contact = (props) => {
                     id="name"
                     label="Name"
                     autoFocus
-                    value={values.name || ''} // <= Suggested change
+                    value={values.name || ""} // <= Suggested change
                     helperText={
                       errors.name && touched.name ? errors.name : null
                     }
@@ -258,7 +252,7 @@ const Contact = (props) => {
                     label="Email"
                     name="email"
                     autoComplete="email"
-                    value={values.email || ''} // <= Suggested change
+                    value={values.email || ""} // <= Suggested change
                     helperText={
                       errors.email && touched.email ? errors.email : null
                     }
@@ -283,7 +277,7 @@ const Contact = (props) => {
                     label="Message"
                     type="message"
                     id="message"
-                    value={values.message || ''} // <= Suggested change
+                    value={values.message || ""} // <= Suggested change
                     helperText={
                       errors.message && touched.message ? errors.message : null
                     }
