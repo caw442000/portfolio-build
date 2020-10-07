@@ -4,19 +4,13 @@ import {
   Avatar,
   Grid,
   Box,
-  Link,
-  IconButton,
-  Button,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 import Typed from "react-typed";
 // import { loadCSS } from 'fg-loadcss';
 // import classNames from "classnames";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
 
-import Icon from "@material-ui/core/Icon";
 import SocialButtons from "./SocialButtons";
 
 // CSS Styles

@@ -1,17 +1,11 @@
 import React from "react";
 
 import {
-  ArrowBack,
-  AssignmentInd,
   Home as HomeIcon,
   Apps,
   ContactMail,
 } from "@material-ui/icons";
 
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-
-import { makeStyles } from "@material-ui/core/styles";
 
 export const menuItems = [
   {

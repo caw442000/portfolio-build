@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-import Home from "./Home";
-import { useHistory } from "react-router-dom";
-import Resume from "./Resume";
-import Portfolio from "./Portfolio";
+import React from "react";
 
-import MobileRightMenuSlider from "@material-ui/core/Drawer";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 import {
-  Container,
-  AppBar,
   Toolbar,
   ListItem,
-  IconButton,
   ListItemText,
   ListItemIcon,
   Avatar,
@@ -21,15 +14,7 @@ import {
   Box,
   Drawer as MUIDrawer,
 } from "@material-ui/core";
-import {
-  ArrowBack,
-  AssignmentInd,
-  Home as HomeIcon,
-  Apps,
-  ContactMail,
-} from "@material-ui/icons";
 
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -81,9 +66,9 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
     textAlign: "center",
     margin: "10px auto",
-    display: "flex",  
+    display: "flex",
     justifyContent: "space-around",
-    alignItems: "center"
+    alignItems: "center",
   },
 }));
 

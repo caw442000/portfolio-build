@@ -1,54 +1,25 @@
 import React, { useEffect, useState } from "react";
-import Home from "./Home";
 import {
-  Route,
-  Switch,
   useHistory,
   useParams,
   withRouter,
   useLocation,
 } from "react-router-dom";
-import Resume from "./Resume";
-import Portfolio from "./Portfolio";
 
-import MobileRightMenuSlider from "@material-ui/core/Drawer";
-import { Link } from "react-router-dom";
 import {
-  Container,
   AppBar,
   Toolbar,
-  ListItem,
   IconButton,
-  ListItemText,
-  ListItemIcon,
-  Avatar,
-  Divider,
-  List,
   Typography,
-  Box,
-  Drawer,
-  Button,
   MenuItem,
   Menu,
 } from "@material-ui/core";
-import {
-  ArrowBack,
-  AssignmentInd,
-  Home as HomeIcon,
-  Apps,
-  ContactMail,
-  Menu as MenuIcon,
-} from "@material-ui/icons";
-
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import { Menu as MenuIcon } from "@material-ui/icons";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { menuItems } from "./menuItems";
 
-import cedric from "../assets/images/cedric-winbush-wbg.jpg";
-import { render } from "@testing-library/react";
 //CSS Styles
 
 const drawerWidth = 240;
@@ -138,9 +109,9 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
-  const handleButtonClick = (pageURL) => {
-    history.push(pageURL);
-  };
+  // const handleButtonClick = (pageURL) => {
+  //   history.push(pageURL);
+  // };
 
   // const [state, setState] = useState({
   //   right: false

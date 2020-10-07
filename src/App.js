@@ -4,12 +4,11 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home";
-import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import {  useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 function App() {

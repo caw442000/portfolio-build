@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import signlingo from "../assets/images/signlingo.png";
 import {
   Box,
   Grid,
@@ -9,7 +8,6 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Button,
   Typography,
   Link,
 } from "@material-ui/core";
@@ -92,10 +90,15 @@ const Portfolio = () => {
         {portfolioItems.map((item, index) => (
           <Grid className={classes.card} key={index} item xs={12} sm={6} md={3}>
             <Card>
-              <CardActionArea>
+              <CardActionArea
+                // component={Link}
+                // href={item.portfolioLiveLink}
+                // target="_blank"
+        
+              >
                 <CardMedia
                   component="img"
-                  alt="SignLingo"
+                  alt={item?.portfolioImageAlt || item?.portfolioTitle}
                   height="140"
                   image={item.portfolioImage}
                 />

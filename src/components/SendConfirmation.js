@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import emailjs from "emailjs-com";
-import SocialButtons from "./SocialButtons";
 
 import { useHistory } from "react-router-dom";
 // import axios from "axios";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
+
 import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
+
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { Link } from "react-router-dom";
 
-import { Form, Formik, FormikHelpers, FormikProps } from "formik";
 import * as yup from "yup";
-import { tan } from "@material-ui/core/colors";
+
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
