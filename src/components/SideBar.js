@@ -11,7 +11,6 @@ import {
   Divider,
   List,
   Typography,
-  Box,
   Drawer as MUIDrawer,
 } from "@material-ui/core";
 
@@ -106,7 +105,6 @@ const SideBar = () => {
             <ListItem
               button
               key={key}
-              button
               onClick={() => history.push(lsItem.listPath)}
             >
               <ListItemIcon className={classes.listItem}>

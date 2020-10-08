@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import SocialButtons from "./SocialButtons";
 
-import { useHistory } from "react-router-dom";
-// import axios from "axios";
 import Button from "@material-ui/core/Button";
 
 import TextField from "@material-ui/core/TextField";
@@ -86,24 +84,7 @@ const useStyles = makeStyles((theme) => ({
   input: {
     color: "tan",
   },
-  text: {
-    // '& input:valid + fieldset': {
-    //   borderColor: 'tan',
-    //   borderWidth: 2,
-    // },
-    // '& input:invalid + fieldset': {
-    //   borderColor: 'red',
-    //   borderWidth: 2,
-    // },
-    // '& input:valid:focus + fieldset': {
-    //   borderLeftWidth: 6,
-    //   padding: '4px !important', // override inline-style
-    // },
-    // '&.Mui-focused fieldset': {
-    //   borderColor: 'green',
-    //   color: 'tan',
-    // },
-  },
+
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
@@ -126,18 +107,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Contact = (props) => {
   const classes = useStyles();
-  const [users, setUsers] = useState([]);
   const [initialValues, setInitialValues] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const history = useHistory();
 
   function sendEmail(values, { resetForm }) {
-    // e.preventDefault();
+
     console.log("the values", values);
-    // console.log("target", e.target)
 
     let templateValues = {
       name: values.name,
