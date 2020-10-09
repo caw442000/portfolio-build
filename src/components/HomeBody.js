@@ -8,8 +8,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 import Typed from "react-typed";
-// import { loadCSS } from 'fg-loadcss';
-// import classNames from "classnames";
+
 
 import SocialButtons from "./SocialButtons";
 
@@ -36,26 +35,22 @@ const useStyles = makeStyles((theme) => ({
   skillsContainer: {
     color: "tan",
     marginTop: "1rem",
-    marginBottom: "1rem",
+    marginBottom: "3rem",
     textAlign: "center",
     display: "flex",
     
-    // width: "100d%",
   },
   skillsTitle: {
     color: "tan",
     margin: "0 1rem",
-   
-    // textAlign: "center",
-    // display: "flex",
-    
+    width: "120px", 
+    textAlign: "left",
 
   },
   skillsText: {
     color: "tan",
     margin: "0 1rem",
-    textAlign: "center",
-    
+    textAlign: "left",
     flex: '1',
 
   },
@@ -65,20 +60,15 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   typedContainer: {
-    // position: "fixed",
-    // top: "50%",
-    // left: "50%",
-    // transform: "translate(-50%, -50%)",
+
     width: "100%",
-    // padding: "4rem 2rem",
     textAlign: "center",
     margin: "80px auto 0 auto",
     zIndex: 1,
     maxWidth: "600px",
-
-    minWidth: "300px",
+    minWidth: "350px",
     overflow: "hidden",
-    // height: "700px",
+
   },
 
 }));
@@ -99,8 +89,6 @@ const HomeBody = () => {
         Full Stack Web Developer
         {/* <Typed strings={["Full Stack Web Developer"]} typeSpeed={40} /> */}
       </Typography>
-
-      {/* <hr className= {classes.hr} /> */}
 
       <Typography className={classes.subtitle} variant="h5">
         <Typed
@@ -131,6 +119,10 @@ const HomeBody = () => {
       <Typography className={classes.skillsContainer} variant="h6">
         <p className={classes.skillsTitle}>Backend:</p>
         <p className={classes.skillsText}>NodeJS | Express | Postgres| MongoDB</p>
+      </Typography>
+      <Typography className={classes.skillsContainer} variant="h6">
+        <p className={classes.skillsTitle}>General Programming:</p>
+        <p className={classes.skillsText}>Git | Github | Python | Algorithms| Data Structures</p>
       </Typography>
     </Box>
   );

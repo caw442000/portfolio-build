@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     width: "350px",
-    minWidth: "370px",
+    minWidth: "350px",
     maxWidth: "400px",
     display: "flex",
     alignItems: "center",
