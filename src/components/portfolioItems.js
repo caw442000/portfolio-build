@@ -17,7 +17,7 @@ export const portfolioItems = [
   },
   {
     portfolioImage: betterProfessor,
-    portfolioText: "A web app to allow professors to track there students project deadlines",
+    portfolioText: "A web app to allow professors to track their students project deadlines",
     portfolioImageAlt: "Photo by Product School on Unsplash",
     portfolioTitle: "Better Professor",
     portfolioStack: "React | ContextAPI | Material UI | Styled-Compoents | Node | Express",
