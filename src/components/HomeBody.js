@@ -6,6 +6,8 @@ import {
   Box,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import {  useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 import Typed from "react-typed";
 
@@ -60,10 +62,15 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   typedContainer: {
-
+    // paddingTop: "300px",
     width: "100%",
+    // height: "80vh",
     textAlign: "center",
-    margin: "80px auto 0 auto",
+    // display: "flex",
+    // justifyContent: "center",
+    // alignItems: "center",
+    // flexDirection: "column",    
+    margin: "0 auto",
     zIndex: 1,
     maxWidth: "600px",
     minWidth: "350px",

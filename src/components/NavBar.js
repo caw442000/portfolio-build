@@ -22,7 +22,7 @@ import { menuItems } from "./menuItems";
 
 //CSS Styles
 
-const drawerWidth = 240;
+export const drawerWidth = 240;
 
 // const useStyles = makeStyles((theme) => ({
 //   menuSliderContainer: {

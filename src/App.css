@@ -1,21 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
 html {
-  /* overflow: scroll; */
+  overflow: scroll;
   min-height: 100vh;
-
-  overflow: visible;
+  /* overflow: hidden; */
 }
 ::-webkit-scrollbar {
-  width: 0px;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  display: none;
 }
 body {
-  font-family: 'Roboto', sans-serif;
-  background: url(./assets/images/coffee-apple.jpg) no-repeat center center fixed;
+  font-family: "Roboto", sans-serif;
+  background: url(./assets/images/coffee-apple.jpg) no-repeat center center
+    fixed;
   background-size: cover;
-  height: 100%;
-  /* overflow-y: scroll; */
-  
+
 }
 
 .app {
@@ -23,19 +20,17 @@ body {
   flex-direction: column;
   height: 100vh;
   min-width: 350px;
-
 }
-
 
 .main__app {
   display: flex;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   min-width: 350px;
+  overflow: hidden;
+  /* position: relative; */
 
   /* flex: 1, */
-  
-
 }
 
 .main__app__body {
@@ -44,15 +39,17 @@ body {
   height: 100%;
   margin: 0 auto;
   display: flex;
+  flex: 1;
   min-width: 350px;
+  /* overflow: hidden; */
+  /* position: relative; */
+  overflow-y: scroll;
+
   /* align-items: center;
    */
-
 }
 .resume__body {
   /* padding-top: 350px; */
   width: 100%;
   /* margin: 100px auto; */
 }
-
-
