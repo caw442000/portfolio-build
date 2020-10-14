@@ -77,7 +77,6 @@ const useStyles = makeStyles((theme) => ({
 const NavBar = () => {
   const params = useParams();
   let location = useLocation();
-  console.log("params", params);
   const history = useHistory();
 
   const [anchorEl, setAnchorEl] = React.useState(null);

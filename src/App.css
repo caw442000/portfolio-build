@@ -27,7 +27,7 @@ body {
   height: 100%;
   align-items: center;
   min-width: 350px;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* position: relative; */
 
   /* flex: 1, */
@@ -41,7 +41,7 @@ body {
   display: flex;
   flex: 1;
   min-width: 350px;
-  /* overflow: hidden; */
+  overflow: hidden;
   /* position: relative; */
   overflow-y: scroll;
 
