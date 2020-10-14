@@ -23,10 +23,7 @@ const useStyles = makeStyles((theme) => ({
     // opacity: 0.75,
   },
   title: {
-    color: "tomato",    
-    margin: theme.spacing(2),
-
-    
+    color: "tomato",
   },
   subtitle: {
     color: "tan",
@@ -93,7 +90,7 @@ const HomeBody = () => {
         {/* <Typed strings={["Full Stack Web Developer"]} typeSpeed={40} /> */}
       </Typography>
 
-      {/* <Typography className={classes.subtitle} variant="h5">
+      <Typography className={classes.subtitle} variant="h5">
         <Typed
           strings={[
             "Web Design",
@@ -108,8 +105,8 @@ const HomeBody = () => {
           loop
         />
 
-        {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} />
-      </Typography> */}
+        {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} /> */}
+      </Typography>
       <SocialButtons />
 
       <Typography className={classes.skillsContainer} variant="h6">

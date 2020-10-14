@@ -15,7 +15,8 @@ function App() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   return (
-
+    <>
+      <CssBaseline />
       <div className="app">
         <NavBar />
 
@@ -47,6 +48,7 @@ function App() {
           </div>
         </div>
       </div>
+    </>
   );
 }
 

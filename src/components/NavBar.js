@@ -22,7 +22,7 @@ import { menuItems } from "./menuItems";
 
 //CSS Styles
 
-export const drawerWidth = 240;
+const drawerWidth = 240;
 
 // const useStyles = makeStyles((theme) => ({
 //   menuSliderContainer: {
@@ -77,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
 const NavBar = () => {
   const params = useParams();
   let location = useLocation();
+  console.log("params", params);
   const history = useHistory();
 
   const [anchorEl, setAnchorEl] = React.useState(null);

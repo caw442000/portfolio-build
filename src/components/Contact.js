@@ -9,8 +9,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { drawerWidth } from './NavBar';
-
 
 import { Form, Formik } from "formik";
 import * as yup from "yup";
@@ -58,28 +56,23 @@ const useStyles = makeStyles((theme) => ({
   "@global": {
     body: {
       backgroundColor: theme.palette.common.white,
-      paddingLeft: {drawerWidth},
-
     },
   },
   root: {
     width: "600px",
     margin: "0 auto",
-        paddingLeft: {drawerWidth},
-
   },
   container: {
     // width: "100%",
     // height: "600px",
     display: "flex",
     alignItems: "center",
+    // paddingBottom: "20px",
   },
   paper: {
     // marginTop: theme.spacing(8),
     margin: "10px auto",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
-        paddingLeft: {drawerWidth},
-
     padding: "10px",
     display: "flex",
     flexDirection: "column",
