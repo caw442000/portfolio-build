@@ -6,8 +6,6 @@ import {
   Box,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import {  useTheme } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import cedric from "../assets/images/cedric-winbush-wbg.jpg";
 import Typed from "react-typed";
 
@@ -25,7 +23,10 @@ const useStyles = makeStyles((theme) => ({
     // opacity: 0.75,
   },
   title: {
-    color: "tomato",
+    color: "tomato",    
+    margin: theme.spacing(2),
+
+    
   },
   subtitle: {
     color: "tan",
@@ -62,15 +63,10 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   typedContainer: {
-    // paddingTop: "300px",
+
     width: "100%",
-    // height: "80vh",
     textAlign: "center",
-    // display: "flex",
-    // justifyContent: "center",
-    // alignItems: "center",
-    // flexDirection: "column",    
-    margin: "0 auto",
+    margin: "80px auto 0 auto",
     zIndex: 1,
     maxWidth: "600px",
     minWidth: "350px",
@@ -97,7 +93,7 @@ const HomeBody = () => {
         {/* <Typed strings={["Full Stack Web Developer"]} typeSpeed={40} /> */}
       </Typography>
 
-      <Typography className={classes.subtitle} variant="h5">
+      {/* <Typography className={classes.subtitle} variant="h5">
         <Typed
           strings={[
             "Web Design",
@@ -112,8 +108,8 @@ const HomeBody = () => {
           loop
         />
 
-        {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} /> */}
-      </Typography>
+        {/* <Icon className={classNames(classes.icon, "fa fa-linkedin-square")} />
+      </Typography> */}
       <SocialButtons />
 
       <Typography className={classes.skillsContainer} variant="h6">
