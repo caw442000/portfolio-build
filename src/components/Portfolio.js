@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     // // display: "flex",
     // width: "100%",
     margin: "0 auto",
+    width: "1200px"
     // // display: "flex",
     // // justifyContent: "space-between",
     // // alignItems:"center"
